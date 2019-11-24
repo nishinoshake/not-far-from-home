@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+// -----------------------------------------------------
+// Media Query
+// -----------------------------------------------------
+@mixin max($width: $mq-max) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin min($width: $mq-min) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+// -----------------------------------------------------
+// Position
+// -----------------------------------------------------
+@mixin fit-full($position: absolute) {
+  width: 100%;
+  height: 100%;
+  position: $position;
+  top: 0;
+  left: 0;
+}
+
+@mixin center($position: absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center-vertical($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin center-horizontal($position: absolute) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin center-flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// -----------------------------------------------------
+// Layout
+// -----------------------------------------------------
+@mixin inside {
+  @include min {
+    max-width: $width-max;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@mixin inside-small {
+  @include max {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+  @include min {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// -----------------------------------------------------
+// Border
+// -----------------------------------------------------
+@mixin border {
+  border: 1px solid $color-border;
+}
+@mixin border-top {
+  border-top: 1px solid $color-border;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $color-border;
+}
+
+@mixin border-right {
+  border-right: 1px solid $color-border;
+}
+
+@mixin border-left {
+  border-left: 1px solid $color-border;
+}
+
+@mixin dot-border-vertical($position: left) {
+  background-size: 1px 6px;
+  background-position: $position top;
+  background-repeat: repeat-y;
+  background-image: linear-gradient(to bottom, $color-border, $color-border 4px, transparent 4px, transparent 6px);
+}
+
+@mixin dot-border-horizontal($position: top) {
+  background-size: 6px 1px;
+  background-position: left $position;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(to right, $color-border, $color-border 4px, transparent 4px, transparent 6px);
+}
