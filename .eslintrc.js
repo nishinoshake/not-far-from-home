@@ -4,7 +4,9 @@ module.exports = {
     node: true
   },
   globals: {
-    YT: true
+    describe: true,
+    test: true,
+    expect: true
   },
   parserOptions: {
     parser: 'babel-eslint'
