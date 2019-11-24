@@ -66,13 +66,6 @@ export const actions = {
     } catch (e) {
       commit('setErrorMessage', { message: CONNECTION_FAIL_MESSSAGE })
     }
-  },
-  async changeDistance({ state, dispatch, commit }, { distance }) {
-    if (!state.rankings[distance]) {
-      await dispatch('fetchRanking', { distance })
-    }
-
-    commit('changeDistance', { distance })
   }
 }
 
@@ -94,9 +87,6 @@ export const mutations = {
   },
   recieveLines(state, { lines }) {
     state.entities.lines = normalize(lines)
-  },
-  changeDistance(state, { distance }) {
-    state.selectedDistance = distance
   },
   selectPrefecture(state, { id }) {
     state.selectedPrefectureId = id
