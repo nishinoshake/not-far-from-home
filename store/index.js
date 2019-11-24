@@ -1,8 +1,9 @@
 import { normalize } from '@/lib/normalizer'
 import { fetchJson } from '@/lib/utils'
+import { DEFAULT_DISTANCE_KM } from '@/config/constants'
 
 export const state = () => ({
-  selectedDistance: 2,
+  selectedDistance: DEFAULT_DISTANCE_KM,
   selectedPrefectureId: null,
   isReady: false,
   rankings: {},
@@ -15,6 +16,12 @@ export const state = () => ({
 })
 
 export const actions = {
+  /**
+   * 静的生成前のデータ取得
+   *
+   * ランキング/映画館/都道府県/路線のJSONを取得。
+   * ここで通信エラーなどの例外が発生するとCIが止まるので、予期しないデプロイを防げる。
+   */
   nuxtServerInit: async function({ state, dispatch, commit }) {
     await Promise.all([
       dispatch('fetchRanking', { distance: state.selectedDistance }),
@@ -92,7 +99,7 @@ export const getters = {
           id: station.id,
           name: station.name,
           point: station.point,
-          isDuplicate: stationNames.filter(n => n === station.name).length > 1,
+          isDuplicated: stationNames.filter(n => n === station.name).length > 1,
           lines: station.lineIds.map(lineId => state.entities.lines[lineId]),
           cinemas: station.cinemas.map(cinema => ({
             distance: cinema.distance,

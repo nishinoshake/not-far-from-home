@@ -1,3 +1,5 @@
+export const DEFAULT_DISTANCE_KM = 2
+
 // メタ
 export const SITE_TITLE = 'NOT FAR FROM HOME（映画館の近くに住みたい）'
 export const SITE_DESCRIPTION =
