@@ -2,8 +2,8 @@ require('dotenv').config()
 
 const TITLE = 'NOT FAR FROM HOME（映画館の近くに住みたい）'
 const DESCRIPTION =
-  '映画館がたくさんあるところに住みたい。東京ならとりあえず渋谷に住めば解決しそうだけど、大阪や京都だったらどうだろうか。という需要があるかは知りませんが、都道府県ごとに、映画館がたくさんある駅をまとめました。'
-const IMAGE_URL = 'https://near-from-home.cc/img/og.png'
+  '映画館がたくさんあるところに住みたい。東京ならとりあえず渋谷の近くに住めば良さそうだけど、大阪や京都だったらどこがいいか。'
+const IMAGE_URL = 'https://not-far-from-home.cc/img/og.png'
 
 export default {
   mode: 'universal',
@@ -36,7 +36,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: 'https://near-from-home.cc'
+        content: 'https://not-far-from-home.cc'
       },
       {
         name: 'og:title',
@@ -80,7 +80,9 @@ export default {
   },
   transition: 'fade',
   env: {
-    BASE_URL: process.env.BASE_URL || 'https://storage.near-from-home.cc'
+    BASE_URL:
+      process.env.BASE_URL ||
+      'https://s3-ap-northeast-1.amazonaws.com/storage.not-far-from-home.cc/api'
   },
   modules: [
     '@nuxtjs/dotenv',
