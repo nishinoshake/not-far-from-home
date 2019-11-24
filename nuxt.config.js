@@ -1,7 +1,10 @@
 require('dotenv').config()
 
-const { SITE_TITLE, SITE_DESCRIPTION } = require('./lib/meta')
-const { PREFECTURE_SLUGS } = require('./config/constants')
+const {
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  PREFECTURE_SLUGS
+} = require('./config/constants')
 const IMAGE_URL = 'https://not-far-from-home.cc/img/og.png'
 
 export default {
