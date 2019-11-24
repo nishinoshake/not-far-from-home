@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const TITLE = 'NOT FAR FROM HOME（映画館の近くに住みたい）'
 const DESCRIPTION =
-  '映画館がたくさんあるところに住みたい。東京ならとりあえず渋谷の近くに住めば良さそうだけど、大阪や京都だったらどこがいいか。'
+  '映画館がたくさんあるところに住みたい。東京ならとりあえず渋谷の近くに住めば良さそうだけど、大阪や京都だったらどこがいいのか。そんな思いを解決できるかもしれません。'
 const IMAGE_URL = 'https://not-far-from-home.cc/img/og.png'
 
 export default {
