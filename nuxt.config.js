@@ -74,7 +74,8 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono'
+        href:
+          'https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono&display=swap'
       }
     ]
   },
