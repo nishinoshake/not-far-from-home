@@ -1,7 +1,7 @@
 <template>
   <div class="shindan">
     <h2 class="shindan-copy">
-      映画館の近くに住みたい。<br />そんな思いを叶える「駅」を探します。<br />お好きな都道府県を選んでください。
+      映画館がたくさんある「駅」を探します。<br />お好きな都道府県を選んでください。
     </h2>
     <div class="shindan-area-list">
       <section
@@ -48,7 +48,6 @@ export default {
     padding-bottom: $margin;
     margin-bottom: $margin;
     line-height: 2;
-    text-align: center;
     &:after {
       content: '↓';
       position: absolute;
@@ -66,7 +65,7 @@ export default {
     &-item {
       &:nth-child(n + 2) {
         @include max {
-          margin-top: 6rem;
+          margin-top: 5rem;
         }
         @include min {
           margin-top: $margin;
@@ -74,14 +73,13 @@ export default {
       }
     }
     &-name {
-      text-align: center;
       color: $color-muted;
       @include max {
-        margin-bottom: 0.7rem;
+        margin-bottom: 0.2rem;
         font-size: 1.2rem;
       }
       @include min {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
         font-size: 0.9rem;
       }
     }
@@ -101,7 +99,6 @@ export default {
       position: relative;
       border-bottom: 1px solid transparent;
       letter-spacing: 0.08em;
-      text-align: center;
       transition: background-color 0.14s linear;
       @include max {
         padding: 0.7rem 1rem;

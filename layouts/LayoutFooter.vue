@@ -1,30 +1,39 @@
 <template>
   <footer class="footer">
-    <nav class="footer-nav">
-      <ul class="footer-list">
-        <li class="footer-item">
-          <nuxt-link to="/about/" class="footer-link">About</nuxt-link>
-        </li>
-        <li class="footer-item">
-          <a
-            href="https://github.com/nishinoshake/"
-            target="_blank"
-            rel="noopener"
-            class="footer-link"
-            >GitHub</a
-          >
-        </li>
-      </ul>
-    </nav>
+    <transition name="fade">
+      <nav class="footer-nav" v-if="isIndex">
+        <ul class="footer-list">
+          <li class="footer-item">
+            <nuxt-link to="/about/" class="footer-link">About</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+    </transition>
+
+    <transition name="footer-home">
+      <nuxt-link v-if="!isIndex" to="/" class="footer-home"
+        >都道府県を選ぶ</nuxt-link
+      >
+    </transition>
   </footer>
 </template>
 
+<script>
+export default {
+  computed: {
+    isIndex() {
+      return this.$route.name === 'index'
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .footer {
+  height: 7.5rem;
   position: relative;
-  z-index: 1;
   margin-top: $margin;
-  padding: $margin 0;
+  @include center-flex;
   &:before {
     content: '';
     position: absolute;
@@ -32,7 +41,7 @@
     height: 1px;
     top: 0;
     left: calc(50% - #{$margin} / 2);
-    background-color: $color-border;
+    background-color: $color-gray;
   }
   &-list {
     display: flex;
@@ -57,12 +66,54 @@
     }
   }
   &-link {
-    font-family: 'Raleway', sans-serif;
-    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border: 1px solid $color-dark;
+    background-color: $color-white;
+    transition: color 0.14s linear, background-color 0.14s linear;
+    @include font-en;
     @include min {
       &:hover {
-        text-decoration: underline;
+        color: $color-white;
+        background-color: $color-dark;
       }
+    }
+  }
+  &-home {
+    width: 16rem;
+    height: 3.5rem;
+    position: fixed;
+    z-index: 10;
+    bottom: 2rem;
+    left: calc(50% - #{16rem / 2});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999em;
+    border: 1px solid $color-dark;
+    background-color: $color-white;
+    transition: color 0.14s linear, background-color 0.14s linear;
+    @include min {
+      &:hover {
+        color: $color-white;
+        background-color: $color-dark;
+      }
+    }
+    &:before {
+      content: '←';
+      left: 1.5rem;
+      @include center-vertical;
+    }
+    &-enter-active {
+      transition: transform 0.4s 0.22s $easeOutQuart;
+    }
+    &-leave-active {
+      transition: opacity 0.12s linear;
+    }
+    &-enter {
+      transform: translateY(100%) translateY(2rem);
+    }
+    &-leave-to {
+      opacity: 0;
     }
   }
 }

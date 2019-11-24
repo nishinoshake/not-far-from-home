@@ -8,7 +8,6 @@
 .about {
   &-section {
     position: relative;
-    text-align: center;
     @include inside-small;
     + .about-section {
       margin-top: $margin;
@@ -20,7 +19,7 @@
         height: 1px;
         top: 0;
         left: calc(50% - #{$margin} / 2);
-        background-color: $color-border;
+        background-color: $color-gray;
       }
     }
   }
@@ -28,7 +27,7 @@
     margin-bottom: 1.8rem;
     font-size: 1.2rem;
     line-height: 1;
-    font-family: 'Raleway', sans-serif;
+    @include font-en;
   }
   &-text {
     line-height: 2;

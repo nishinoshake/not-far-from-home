@@ -1,7 +1,7 @@
 <template>
-  <div class="container" id="container">
+  <div class="container" :class="`mod-${routeName}`" id="container">
     <LayoutHeader />
-    <main>
+    <main class="main">
       <nuxt />
     </main>
     <LayoutFooter />
@@ -13,7 +13,12 @@ import LayoutHeader from './LayoutHeader'
 import LayoutFooter from './LayoutFooter'
 
 export default {
-  components: { LayoutHeader, LayoutFooter }
+  components: { LayoutHeader, LayoutFooter },
+  computed: {
+    routeName() {
+      return this.$route.name
+    }
+  }
 }
 </script>
 
@@ -27,7 +32,7 @@ export default {
 }
 
 * {
-  -webkit-tap-highlight-color: rgba($color-dark, 0.5);
+  -webkit-tap-highlight-color: rgba($color-black, 0.5);
 }
 
 h1,
@@ -43,11 +48,6 @@ h6 {
 a {
   color: inherit;
   text-decoration: none;
-  @include min {
-    &[target='_blank']:hover {
-      text-decoration: underline;
-    }
-  }
 }
 
 li {
@@ -80,16 +80,19 @@ html {
 
 body {
   color: $color-font;
+  text-align: center;
   line-height: 1.6;
   letter-spacing: 0.08em;
   font-feature-settings: 'palt';
   font-family: sans-serif;
-  background-color: $color-bg;
 }
 
 .container {
-  max-width: $width-max;
+  max-width: $mq-max;
   margin: 0 auto;
+  &.mod-archive {
+    padding-bottom: 5.5rem;
+  }
 }
 
 .pc {
@@ -111,6 +114,21 @@ body {
   &-enter,
   &-leave-to {
     opacity: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    content: '.';
+  }
+  25% {
+    content: '..';
+  }
+  50% {
+    content: '...';
+  }
+  75% {
+    content: '....';
   }
 }
 </style>

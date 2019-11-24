@@ -5,23 +5,19 @@
 // -----------------------------------------------------
 $color-black: #000;
 $color-dark: #222;
-$color-light: #444;
-$color-muted: #888;
+$color-light: #333;
+$color-muted: #666;
 $color-gray: #cacaca;
-$color-snow: #fafafa;
 $color-yellow: #fff59d;
 $color-white: #fff;
 $color-font: $color-light;
-$color-fill: $color-dark;
-$color-border: $color-gray;
-$color-bg: $color-white;
 
 // -----------------------------------------------------
 // size
 // -----------------------------------------------------
-$mq-max: 800px;
+$mq-max: 740px;
 $mq-min: $mq-max+1;
-$width-max: 920px;
+$max-table-width: 520px;
 $margin: 3rem;
 
 // -----------------------------------------------------

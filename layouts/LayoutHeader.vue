@@ -1,18 +1,11 @@
 <template>
   <header class="header">
     <h1 class="header-title">
-      <nuxt-link to="/">NOT FAR FROM HOME</nuxt-link>
+      <nuxt-link to="/">
+        <span class="header-title-en">NOT FAR FROM HOME</span>
+        <span class="header-title-ja">（映画館の近くに住みたい）</span>
+      </nuxt-link>
     </h1>
-    <nav class="header-nav">
-      <ul class="header-list">
-        <li class="header-item">
-          <nuxt-link to="/" class="header-link-index">診断</nuxt-link>
-        </li>
-        <li class="header-item">
-          <nuxt-link to="/archive/" class="header-link-archive">一覧</nuxt-link>
-        </li>
-      </ul>
-    </nav>
   </header>
 </template>
 
@@ -29,17 +22,21 @@
     height: 1px;
     bottom: 0;
     left: calc(50% - #{$margin} / 2);
-    background-color: $color-border;
+    background-color: $color-gray;
   }
   &-title {
-    margin-bottom: 1rem;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    font-size: 1.4rem;
     letter-spacing: 0.1em;
-    color: $color-muted;
     @include max {
       @include inside-small;
+    }
+    &-en {
+      display: block;
+      font-size: 1.4rem;
+      @include font-en;
+    }
+    &-ja {
+      display: block;
+      margin-top: 0.2rem;
     }
   }
   &-list {
@@ -47,39 +44,30 @@
     justify-content: center;
   }
   &-item {
-    margin: 0 0.3rem;
-    a {
+    position: relative;
+    &:nth-child(n + 2) {
       position: relative;
-      padding: 0.8rem;
-      font-size: 0.9rem;
-      letter-spacing: 0.2em;
-      color: $color-muted;
+      margin-left: 1.5em;
+      padding-left: 1.5em;
       &:before {
         content: '';
         width: 6px;
         height: 6px;
         position: absolute;
-        bottom: 0;
-        left: calc(50% - 6px / 2);
-        opacity: 0;
+        bottom: calc(50% - 3px);
+        left: -3px;
         background-color: currentColor;
         border-radius: 50%;
       }
-      @include min {
-        &:hover {
-          color: $color-font;
-          &:before {
-            opacity: 1;
-          }
-        }
-      }
     }
   }
-  &-link-index.nuxt-link-exact-active,
-  &-link-archive.nuxt-link-active {
-    color: $color-font;
-    &:before {
-      opacity: 1;
+  &-link {
+    text-decoration: none;
+    @include font-en;
+    @include min {
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

@@ -73,37 +73,44 @@
 }
 
 // -----------------------------------------------------
+// Font
+// -----------------------------------------------------
+@mixin font-en {
+  font-family: 'Raleway', sans-serif;
+}
+
+// -----------------------------------------------------
 // Border
 // -----------------------------------------------------
 @mixin border {
-  border: 1px solid $color-border;
+  border: 1px solid $color-gray;
 }
 @mixin border-top {
-  border-top: 1px solid $color-border;
+  border-top: 1px solid $color-gray;
 }
 
 @mixin border-bottom {
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $color-gray;
 }
 
 @mixin border-right {
-  border-right: 1px solid $color-border;
+  border-right: 1px solid $color-gray;
 }
 
 @mixin border-left {
-  border-left: 1px solid $color-border;
+  border-left: 1px solid $color-gray;
 }
 
 @mixin dot-border-vertical($position: left) {
   background-size: 1px 6px;
   background-position: $position top;
   background-repeat: repeat-y;
-  background-image: linear-gradient(to bottom, $color-border, $color-border 4px, transparent 4px, transparent 6px);
+  background-image: linear-gradient(to bottom, $color-gray, $color-gray 4px, transparent 4px, transparent 6px);
 }
 
 @mixin dot-border-horizontal($position: top) {
   background-size: 6px 1px;
   background-position: left $position;
   background-repeat: repeat-x;
-  background-image: linear-gradient(to right, $color-border, $color-border 4px, transparent 4px, transparent 6px);
+  background-image: linear-gradient(to right, $color-gray, $color-gray 4px, transparent 4px, transparent 6px);
 }

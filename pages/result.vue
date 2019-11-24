@@ -30,30 +30,16 @@
         ><br class="sp" />引越し先の候補に入れてみては。
       </p>
     </div>
-    <CinemaList :cinemas="topStationCinemas" />
-    <ul class="result-button-list">
-      <li class="result-button-item">
-        <nuxt-link
-          :to="{ path: '/archive/', query: { pref: pref.en } }"
-          class="result-button mod-next"
-          >{{ prefName }}のランキングを見る</nuxt-link
-        >
-      </li>
-      <li class="result-button-item">
-        <nuxt-link to="/" class="result-button mod-prev">
-          都道府県を選び直す
-        </nuxt-link>
-      </li>
-    </ul>
+    <PrefectureItem :pref="pref" :stations="stations" />
   </section>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
-import CinemaList from '@/components/CinemaList'
+import PrefectureItem from '@/components/PrefectureItem'
 
 export default {
-  components: { CinemaList },
+  components: { PrefectureItem },
   computed: {
     ...mapState(['selectedDistance', 'prefectures']),
     ...mapGetters(['result']),
@@ -63,8 +49,11 @@ export default {
     prefName() {
       return this.pref ? this.pref.ja : ''
     },
+    stations() {
+      return this.result ? this.result.stations : null
+    },
     topStation() {
-      return this.result ? this.result.stations[0] : null
+      return this.stations ? this.stations[0] : null
     },
     topStationName() {
       return this.topStation ? `${this.topStation.name}駅` : ''
@@ -99,7 +88,6 @@ export default {
 
 <style lang="scss" scoped>
 .result {
-  text-align: center;
   &-station {
     display: flex;
     justify-content: center;
@@ -113,7 +101,7 @@ export default {
     }
   }
   &-description {
-    margin-bottom: 1.5rem;
+    margin-bottom: $margin;
     &-text {
       line-height: 2;
       &:nth-child(n + 2) {
@@ -128,48 +116,6 @@ export default {
       line-height: 1.2;
       font-weight: bold;
       background: linear-gradient(transparent 60%, $color-yellow 60%);
-    }
-  }
-  &-button {
-    width: 20rem;
-    padding: 1rem;
-    position: relative;
-    border-radius: 999em;
-    transition: 0.14s linear;
-    @include center-flex;
-    &:after {
-      @include center-vertical;
-    }
-    &.mod-prev {
-      width: 14rem;
-      font-size: 0.9rem;
-      &:after {
-        content: '←';
-        left: 1.5rem;
-      }
-    }
-    &.mod-next {
-      border: 1px solid $color-dark;
-      &:after {
-        content: '→';
-        right: 1.5rem;
-      }
-      @include min {
-        &:hover {
-          color: $color-white;
-          background-color: $color-dark;
-        }
-      }
-    }
-    &-list {
-      margin-top: $margin;
-    }
-    &-item {
-      display: flex;
-      justify-content: center;
-      &:nth-child(n + 2) {
-        margin-top: 1.5rem;
-      }
     }
   }
 }
