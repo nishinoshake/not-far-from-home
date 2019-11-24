@@ -33,7 +33,7 @@ export const actions = {
     commit('setIsReady')
   },
   async fetchRanking({ state, commit }, { distance }) {
-    const ranking = await fetchJson(`rankin/${distance}`)
+    const ranking = await fetchJson(`ranking/${distance}`)
 
     commit('recieveRanking', { distance, ranking })
   },
