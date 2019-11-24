@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: 10.x
 
-    - name: Cache node modules
+    - name: Cache package
       uses: actions/cache@v1
       with:
         path: node_modules
@@ -25,7 +25,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
 
-    - name: Build
+    - name: Install package
+      run: npm install
+
+    - name: Generate static file
       run: npm run generate
 
     - name: Use Python
@@ -37,7 +40,7 @@ jobs:
     - name: Install AWS CLI
       run: pip install --upgrade pip awscli
 
-    - name: deploy
+    - name: Deploy to AWS
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
