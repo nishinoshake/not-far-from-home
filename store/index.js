@@ -1,4 +1,3 @@
-import { CONNECTION_FAIL_MESSSAGE } from '@/config/constants'
 import { normalize } from '@/lib/normalizer'
 import { fetchJson } from '@/lib/utils'
 
@@ -6,8 +5,6 @@ export const state = () => ({
   selectedDistance: 2,
   selectedPrefectureId: null,
   isReady: false,
-  isLoading: false,
-  error: '',
   rankings: {},
   prefectures: [],
   entities: {
@@ -29,43 +26,24 @@ export const actions = {
     commit('setIsReady')
   },
   async fetchRanking({ state, commit }, { distance }) {
-    commit('setIsLoading')
+    const ranking = await fetchJson(`rankin/${distance}`)
 
-    try {
-      const ranking = await fetchJson(`ranking/${distance}`)
-
-      commit('recieveRanking', { distance, ranking })
-      commit('clearIsLoading')
-    } catch (e) {
-      commit('setErrorMessage', { message: CONNECTION_FAIL_MESSSAGE })
-    }
+    commit('recieveRanking', { distance, ranking })
   },
   async fetchCinemas({ commit }) {
-    try {
-      const cinemas = await fetchJson(`cinema`)
+    const cinemas = await fetchJson(`cinema`)
 
-      commit('recieveCinemas', { cinemas })
-    } catch (e) {
-      commit('setErrorMessage', { message: CONNECTION_FAIL_MESSSAGE })
-    }
+    commit('recieveCinemas', { cinemas })
   },
   async fetchPrefectures({ commit }) {
-    try {
-      const prefectures = await fetchJson(`pref`)
+    const prefectures = await fetchJson(`pref`)
 
-      commit('recievePrefectures', { prefectures })
-    } catch (e) {
-      commit('setErrorMessage', { message: CONNECTION_FAIL_MESSSAGE })
-    }
+    commit('recievePrefectures', { prefectures })
   },
   async fetchLines({ commit }) {
-    try {
-      const lines = await fetchJson(`line`)
+    const lines = await fetchJson(`line`)
 
-      commit('recieveLines', { lines })
-    } catch (e) {
-      commit('setErrorMessage', { message: CONNECTION_FAIL_MESSSAGE })
-    }
+    commit('recieveLines', { lines })
   }
 }
 
@@ -96,18 +74,6 @@ export const mutations = {
   },
   setIsReady(state) {
     state.isReady = true
-  },
-  setIsLoading(state) {
-    state.isLoading = true
-  },
-  clearIsLoading(state) {
-    state.isLoading = false
-  },
-  setErrorMessage(state, { message }) {
-    state.error = message
-  },
-  clearErrorMessage(state) {
-    state.error = ''
   }
 }
 
