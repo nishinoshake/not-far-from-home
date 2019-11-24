@@ -73,9 +73,9 @@ export default {
       }
     ]
   },
-  // generate: {
-  //   routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`)
-  // },
+  generate: {
+    routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`)
+  },
   transition: 'fade',
   env: {
     BASE_URL:
