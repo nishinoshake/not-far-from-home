@@ -1,8 +1,7 @@
 require('dotenv').config()
 
-const TITLE = 'NOT FAR FROM HOME（映画館の近くに住みたい）'
-const DESCRIPTION =
-  '映画館がたくさんあるところに住みたい。東京ならとりあえず渋谷の近くに住めば良さそうだけど、大阪や京都だったらどこがいいのか。そんな思いを解決できるかもしれません。'
+const { SITE_TITLE, SITE_DESCRIPTION } = require('./lib/meta')
+const { PREFECTURE_SLUGS } = require('./config/constants')
 const IMAGE_URL = 'https://not-far-from-home.cc/img/og.png'
 
 export default {
@@ -11,7 +10,7 @@ export default {
     host: '0.0.0.0'
   },
   head: {
-    title: TITLE,
+    title: SITE_TITLE,
     htmlAttrs: {
       lang: 'ja'
     },
@@ -20,7 +19,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         name: 'description',
-        content: DESCRIPTION
+        content: SITE_DESCRIPTION
       },
       {
         name: 'theme-color',
@@ -32,7 +31,7 @@ export default {
       },
       {
         property: 'og:site_name',
-        content: TITLE
+        content: SITE_TITLE
       },
       {
         property: 'og:url',
@@ -40,11 +39,11 @@ export default {
       },
       {
         name: 'og:title',
-        content: TITLE
+        content: SITE_TITLE
       },
       {
         name: 'og:description',
-        content: DESCRIPTION
+        content: SITE_DESCRIPTION
       },
       {
         property: 'og:image',
@@ -53,14 +52,6 @@ export default {
       {
         name: 'twitter:card',
         content: 'summary_large_image'
-      },
-      {
-        name: 'twitter:title',
-        content: TITLE
-      },
-      {
-        name: 'twitter:description',
-        content: DESCRIPTION
       },
       {
         name: 'twitter:image',
@@ -78,6 +69,9 @@ export default {
           'https://fonts.googleapis.com/css?family=Raleway|Roboto+Mono&display=swap'
       }
     ]
+  },
+  generate: {
+    routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`)
   },
   transition: 'fade',
   env: {
@@ -97,8 +91,8 @@ export default {
   ],
   styleResources: {
     scss: [
-      '~/assets/scss/foundation/_variables.scss',
-      '~/assets/scss/foundation/_mixin.scss'
+      '@/assets/scss/foundation/_variables.scss',
+      '@/assets/scss/foundation/_mixin.scss'
     ]
   }
 }

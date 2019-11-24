@@ -17,7 +17,7 @@
             :key="prefecture.id"
           >
             <nuxt-link
-              :to="{ path: '/result/', query: { pref: prefecture.en } }"
+              :to="`/ranking/${prefecture.en}/`"
               class="shindan-prefecture-link"
             >
               {{ prefecture.ja }}
@@ -31,8 +31,12 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import { buildMeta } from '@/lib/meta'
 
 export default {
+  head() {
+    return buildMeta()
+  },
   computed: {
     ...mapGetters(['prefectureAreas'])
   }

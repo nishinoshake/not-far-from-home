@@ -1,31 +1,31 @@
 <template>
-  <section class="result" v-if="result">
-    <h2 class="result-station">
-      <a class="result-station-row">
-        <span class="result-station-text">
+  <section class="ranking" v-if="result">
+    <h2 class="ranking-station">
+      <a class="ranking-station-row">
+        <span class="ranking-station-text">
           <span
             v-for="(str, index) in topStationName"
             :key="index"
-            class="result-station-str"
+            class="ranking-station-str"
             >{{ str }}</span
           >
         </span>
       </a>
     </h2>
-    <div class="result-description">
-      <p class="result-description-text">
+    <div class="ranking-description">
+      <p class="ranking-description-text">
         {{ prefName }}で<span class="pc">、</span
         ><br class="sp" />映画館に行きやすい駅は<span class="pc">、</span
         ><br class="sp" />「{{ topStationName }}」です。
       </p>
-      <p class="result-description-text">
-        駅から<span class="result-description-mark"
+      <p class="ranking-description-text">
+        駅から<span class="ranking-description-mark"
           >半径{{ selectedDistance }}km</span
-        >以内に<br class="sp" /><span class="result-description-mark"
+        >以内に<br class="sp" /><span class="ranking-description-mark"
           >{{ numberOfCinemas }}個</span
         >の映画館があります。
       </p>
-      <p class="result-description-text">
+      <p class="ranking-description-text">
         映画館だけで決めるのはあれですが<span class="pc">、</span
         ><br class="sp" />引越し先の候補に入れてみては。
       </p>
@@ -37,8 +37,12 @@
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import PrefectureItem from '@/components/PrefectureItem'
+import { buildMeta } from '@/lib/meta'
 
 export default {
+  head() {
+    return buildMeta(`${this.prefName}で映画館に行きやすい駅のランキング`)
+  },
   components: { PrefectureItem },
   computed: {
     ...mapState(['selectedDistance', 'prefectures']),
@@ -65,20 +69,19 @@ export default {
       return this.topStationCinemas.length
     }
   },
-  created() {
-    if (this.$route.query.pref) {
-      const prefecture = this.prefectures.find(
-        pref => pref.en === this.$route.query.pref
-      )
+  fetch({ store, params }) {
+    const prefecture = store.state.prefectures.find(
+      pref => pref.en === params.slug
+    )
 
-      if (prefecture) {
-        this.selectPrefecture({ id: prefecture.id })
-
-        return
-      }
+    if (prefecture) {
+      store.commit('selectPrefecture', { id: prefecture.id })
     }
-
-    this.$router.push('/')
+  },
+  mounted() {
+    if (!this.result) {
+      this.$router.push('/')
+    }
   },
   methods: {
     ...mapMutations(['selectPrefecture'])
@@ -87,7 +90,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.result {
+.ranking {
   &-station {
     display: flex;
     justify-content: center;
