@@ -81,7 +81,6 @@ export default {
     &-name {
       display: flex;
       justify-content: center;
-      color: $color-muted;
       @include max {
         margin-bottom: 0.4rem;
       }
@@ -91,13 +90,13 @@ export default {
       }
       span {
         width: 9em;
-        border: 1px solid currentColor;
+        background-color: $color-snow;
         @include center-flex;
         @include max {
           padding: 0.4rem 1rem;
         }
         @include min {
-          padding: 0.3rem;
+          padding: 0.4rem;
         }
       }
     }

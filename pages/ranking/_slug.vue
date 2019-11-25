@@ -25,10 +25,6 @@
           >{{ numberOfCinemas }}個</span
         >の映画館があります。
       </p>
-      <p class="ranking-description-text">
-        映画館だけで決めるのはあれですが<span class="pc">、</span
-        ><br class="sp" />引越し先の候補に入れてみては。
-      </p>
     </div>
     <PrefectureItem :pref="pref" :stations="stations" />
   </section>
@@ -38,6 +34,7 @@
 import { mapState, mapGetters, mapMutations } from 'vuex'
 import PrefectureItem from '@/components/PrefectureItem'
 import { buildMeta } from '@/lib/meta'
+import { googleIt } from '@/lib/utils'
 
 export default {
   head() {
@@ -84,7 +81,8 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['selectPrefecture'])
+    ...mapMutations(['selectPrefecture']),
+    googleIt
   }
 }
 </script>
@@ -104,7 +102,7 @@ export default {
     }
   }
   &-description {
-    margin-bottom: $margin;
+    margin-bottom: 4rem;
     &-text {
       line-height: 2;
       &:nth-child(n + 2) {
@@ -119,6 +117,30 @@ export default {
       line-height: 1.2;
       font-weight: bold;
       background: linear-gradient(transparent 60%, $color-yellow 60%);
+    }
+    &-link {
+      display: flex;
+      justify-content: center;
+      margin-top: $margin;
+      &-text {
+        min-width: 12rem;
+        min-height: 3.5rem;
+        padding: 0.8rem 2rem;
+        border-radius: 999em;
+        border: 1px solid $color-dark;
+        background-color: $color-white;
+        transition: color 0.14s linear, background-color 0.14s linear;
+        @include center-flex;
+        @include max {
+        }
+        @include min {
+          bottom: 2rem;
+          &:hover {
+            color: $color-white;
+            background-color: $color-dark;
+          }
+        }
+      }
     }
   }
 }

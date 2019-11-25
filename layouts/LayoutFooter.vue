@@ -81,13 +81,11 @@ export default {
     position: fixed;
     z-index: 10;
     left: calc(50% - #{16rem / 2});
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 999em;
     border: 1px solid $color-dark;
     background-color: $color-white;
     transition: color 0.14s linear, background-color 0.14s linear;
+    @include center-flex;
     @include max {
       bottom: 5.5rem;
     }
