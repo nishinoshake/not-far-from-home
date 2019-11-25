@@ -30,10 +30,15 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  height: 7.5rem;
   position: relative;
   margin-top: $margin;
   @include center-flex;
+  @include max {
+    height: 13rem;
+  }
+  @include min {
+    height: 7.5rem;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -67,23 +72,14 @@ export default {
   }
   &-link {
     padding: 0.6rem 1rem;
-    border: 1px solid $color-dark;
     background-color: $color-white;
-    transition: color 0.14s linear, background-color 0.14s linear;
     @include font-en;
-    @include min {
-      &:hover {
-        color: $color-white;
-        background-color: $color-dark;
-      }
-    }
   }
   &-home {
     width: 16rem;
     height: 3.5rem;
     position: fixed;
     z-index: 10;
-    bottom: 2rem;
     left: calc(50% - #{16rem / 2});
     display: flex;
     justify-content: center;
@@ -92,7 +88,11 @@ export default {
     border: 1px solid $color-dark;
     background-color: $color-white;
     transition: color 0.14s linear, background-color 0.14s linear;
+    @include max {
+      bottom: 5.5rem;
+    }
     @include min {
+      bottom: 2rem;
       &:hover {
         color: $color-white;
         background-color: $color-dark;
@@ -110,7 +110,12 @@ export default {
       transition: opacity 0.12s linear;
     }
     &-enter {
-      transform: translateY(100%) translateY(2rem);
+      @include max {
+        transform: translateY(100%) translateY(5.5rem);
+      }
+      @include min {
+        transform: translateY(100%) translateY(2rem);
+      }
     }
     &-leave-to {
       opacity: 0;

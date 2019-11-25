@@ -9,7 +9,9 @@
         v-for="(area, i) in prefectureAreas"
         :key="i"
       >
-        <h3 class="shindan-area-name">{{ area.name }}</h3>
+        <h3 class="shindan-area-name">
+          <span>{{ area.name }}</span>
+        </h3>
         <ul class="shindan-prefecture-list">
           <li
             class="shindan-prefecture-item"
@@ -64,7 +66,7 @@ export default {
   &-area {
     &-list {
       margin-top: 2rem;
-      padding: 0 4rem;
+      padding: 0 2rem;
     }
     &-item {
       &:nth-child(n + 2) {
@@ -77,14 +79,26 @@ export default {
       }
     }
     &-name {
+      display: flex;
+      justify-content: center;
       color: $color-muted;
       @include max {
-        margin-bottom: 0.2rem;
-        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
       }
       @include min {
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.8rem;
         font-size: 0.9rem;
+      }
+      span {
+        width: 9em;
+        border: 1px solid currentColor;
+        @include center-flex;
+        @include max {
+          padding: 0.4rem 1rem;
+        }
+        @include min {
+          padding: 0.3rem;
+        }
       }
     }
   }
@@ -100,16 +114,17 @@ export default {
       }
     }
     &-link {
+      display: block;
       position: relative;
       border-bottom: 1px solid transparent;
       letter-spacing: 0.08em;
       transition: background-color 0.14s linear;
       @include max {
-        padding: 0.7rem 1rem;
+        padding: 0.7rem 1.4rem;
         font-size: 1.2rem;
       }
       @include min {
-        padding: 0.7rem 0.5rem;
+        padding: 0.5rem 0.5rem;
       }
       &:before {
         content: '';
