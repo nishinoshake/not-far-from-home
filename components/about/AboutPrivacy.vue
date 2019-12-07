@@ -1,6 +1,5 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">Privacy</h2>
     <p class="about-text">
       本サイトでは、アクセス状況把握のため、<br />Google
       Analyticsを利用しています。

@@ -98,6 +98,7 @@ export const getters = {
         stations: item.stations.map(station => ({
           id: station.id,
           name: station.name,
+          roman: station.roman,
           point: station.point,
           isDuplicated: stationNames.filter(n => n === station.name).length > 1,
           lines: station.lineIds.map(lineId => state.entities.lines[lineId]),

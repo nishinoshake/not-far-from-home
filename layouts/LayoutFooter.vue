@@ -4,7 +4,9 @@
       <nav class="footer-nav" v-if="isIndex">
         <ul class="footer-list">
           <li class="footer-item">
-            <nuxt-link to="/about/" class="footer-link">About</nuxt-link>
+            <nuxt-link to="/about/" class="footer-link"
+              >このサイトについて</nuxt-link
+            >
           </li>
         </ul>
       </nav>

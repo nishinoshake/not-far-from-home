@@ -1,10 +1,7 @@
 <template>
   <header class="header">
     <h1 class="header-title">
-      <nuxt-link to="/">
-        <span class="header-title-en">NOT FAR FROM HOME</span>
-        <span class="header-title-ja">（映画館の近くに住みたい）</span>
-      </nuxt-link>
+      <nuxt-link to="/">映画館の近くに住みたい</nuxt-link>
     </h1>
   </header>
 </template>
@@ -28,15 +25,6 @@
     letter-spacing: 0.1em;
     @include max {
       @include inside-small;
-    }
-    &-en {
-      display: block;
-      font-size: 1.4rem;
-      @include font-en;
-    }
-    &-ja {
-      display: block;
-      margin-top: 0.2rem;
     }
   }
   &-list {

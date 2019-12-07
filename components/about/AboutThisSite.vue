@@ -1,6 +1,5 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">About</h2>
     <p class="about-text">
       映画館の近くに住みたい。<br />できるなら、ただ近いだけでなく、<br />毎週違う映画館に行けたら最高だ。
     </p>

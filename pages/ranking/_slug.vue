@@ -2,14 +2,8 @@
   <section class="ranking" v-if="result">
     <h2 class="ranking-station">
       <a class="ranking-station-row">
-        <span class="ranking-station-text">
-          <span
-            v-for="(str, index) in topStationName"
-            :key="index"
-            class="ranking-station-str"
-            >{{ str }}</span
-          >
-        </span>
+        <span class="ranking-station-name">{{ topStationName }}</span>
+        <span class="ranking-station-roman">{{ topStationRoman }}</span>
       </a>
     </h2>
     <div class="ranking-description">
@@ -59,6 +53,9 @@ export default {
     topStationName() {
       return this.topStation ? `${this.topStation.name}駅` : ''
     },
+    topStationRoman() {
+      return this.topStation ? this.topStation.roman : ''
+    },
     topStationCinemas() {
       return this.topStation ? this.topStation.cinemas : []
     },
@@ -94,11 +91,20 @@ export default {
     justify-content: center;
     margin-bottom: $margin;
     &-row {
-      padding: 0.2em 0.8em;
-      font-size: 1.6rem;
+      padding: 1rem 3rem;
       letter-spacing: 0.1em;
       color: $color-white;
       background-color: $color-dark;
+    }
+    &-name {
+      display: block;
+      font-size: 1.6rem;
+    }
+    &-roman {
+      margin-top: 0.2rem;
+      display: block;
+      font-size: 1.2rem;
+      @include font-en;
     }
   }
   &-description {

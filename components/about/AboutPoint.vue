@@ -1,6 +1,5 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">Ranking</h2>
     <p class="about-text">
       各都道府県のランキングは、<br />映画館数と距離をもとに算出した、<br />ポイントに基づいて作成しています。
     </p>
