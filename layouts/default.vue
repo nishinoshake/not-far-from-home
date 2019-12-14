@@ -35,7 +35,8 @@ if (process.browser) {
   WebFont = require('webfontloader')
 }
 
-const MINIMUM_WAIT_MS = 600
+const MIN_WAIT_MS = 500
+const MAX_WAIT_MS = 5000
 
 export default {
   components: { LayoutFooter },
@@ -50,7 +51,13 @@ export default {
     }
   },
   async mounted() {
-    await Promise.all([this.loadFonts, this.waitMs(MINIMUM_WAIT_MS)])
+    /**
+     * フォント読み込み時にバキッとなるのが嫌なので読み込みを待つ
+     */
+    await Promise.race([
+      Promise.all([this.loadFonts(), this.waitMs(MIN_WAIT_MS)]),
+      this.waitMs(MAX_WAIT_MS)
+    ])
 
     this.isLoaded = true
   },
@@ -175,7 +182,6 @@ body {
     height: 100%;
     display: block;
     fill: $color-fill;
-    animation: loading 3s linear infinite;
   }
 }
 
@@ -187,16 +193,6 @@ body {
   &-enter,
   &-leave-to {
     opacity: 0;
-  }
-}
-
-@keyframes loading {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
   }
 }
 </style>
