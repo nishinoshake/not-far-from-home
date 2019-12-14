@@ -73,7 +73,7 @@ export default {
     display: flex;
     justify-content: center;
     line-height: 1;
-    letter-spacing: 0;
+    letter-spacing: -0.01em;
     margin-bottom: 4rem;
     @include font-xl;
     span {
