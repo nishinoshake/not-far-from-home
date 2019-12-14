@@ -73,11 +73,11 @@ export default {
     display: flex;
     justify-content: center;
     line-height: 1;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     margin-bottom: 4rem;
     @include font-xl;
     span {
-      padding: 0.6rem 0.6rem 0.7rem 0.8rem;
+      padding: 0.4rem 0.4rem 0.5rem 0.6rem;
       @include border;
     }
   }
