@@ -1,8 +1,22 @@
 <template>
   <div class="shindan">
-    <h2 class="shindan-copy">
-      映画館がたくさんある「駅」を探します。<br />お好きな都道府県を選んでください。
-    </h2>
+    <h1 class="shindan-title"><span>映画館の近くに住みたい</span></h1>
+    <div class="shindan-copy">
+      <p>できれば近いだけでなく<br />選択肢がたくさん欲しい</p>
+      <p>
+        一番の理想は渋谷だけど<br />東京に住めるぐらいなら<br />そもそも悩む必要がない
+      </p>
+      <p>
+        今の住まいから離れずに<br />引越が楽で映画館が多い<br />知りたいのはそんな場所
+      </p>
+      <p>でもいったいどうすれば</p>
+      <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
+    </div>
+    <div class="shindan-please">
+      <p>↓↓↓↓↓</p>
+      <p>都道府県を選んで下さい</p>
+      <p>↓↓↓↓↓</p>
+    </div>
     <div class="shindan-area-list">
       <section
         class="shindan-area-item"
@@ -32,7 +46,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { buildMeta } from '@/lib/meta'
 
 export default {
@@ -41,6 +55,12 @@ export default {
   },
   computed: {
     ...mapGetters(['prefectureAreas'])
+  },
+  mounted() {
+    this.setHasHistory()
+  },
+  methods: {
+    ...mapMutations(['setHasHistory'])
   }
 }
 </script>
@@ -49,97 +69,66 @@ export default {
 .shindan {
   position: relative;
   z-index: 1;
-  &-copy {
-    position: relative;
-    padding-bottom: $margin;
-    margin-bottom: $margin;
-    line-height: 2;
-    &:after {
-      content: '↓';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      font-size: 1.2rem;
-      transform: translate(-50%, 45%);
+  &-title {
+    display: flex;
+    justify-content: center;
+    line-height: 1;
+    letter-spacing: 0;
+    margin-bottom: 4rem;
+    @include font-xl;
+    span {
+      padding: 0.6rem 0.6rem 0.7rem 0.8rem;
+      @include border;
     }
+  }
+  &-copy,
+  &-please {
+    letter-spacing: 0.08em;
+    text-align: center;
+    @include font-xl;
+    * + * {
+      margin-top: 3rem;
+    }
+  }
+  &-please {
+    margin: 5rem 0 5.5rem;
   }
   &-area {
     &-list {
-      margin-top: 2rem;
-      padding: 0 2rem;
+      padding: 0 $padding;
+      letter-spacing: 0.2em;
     }
     &-item {
       &:nth-child(n + 2) {
-        @include max {
-          margin-top: 5rem;
-        }
-        @include min {
-          margin-top: $margin;
-        }
+        margin-top: 7rem;
       }
     }
     &-name {
-      display: flex;
-      justify-content: center;
-      @include max {
-        margin-bottom: 0.4rem;
-      }
-      @include min {
-        margin-bottom: 0.8rem;
-        font-size: 0.9rem;
-      }
-      span {
-        width: 9em;
-        background-color: $color-snow;
-        @include center-flex;
-        @include max {
-          padding: 0.4rem 1rem;
-        }
-        @include min {
-          padding: 0.4rem;
-        }
-      }
+      margin-bottom: 2.5rem;
+      font-size: 2.5rem;
+      text-align: center;
     }
   }
   &-prefecture {
     &-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      background-color: $color-fill;
+      padding: $border-width / 2;
     }
     &-item {
-      @include max {
-        margin-top: 1.2rem;
-      }
+      width: calc(100% / 3);
+      padding: $border-width / 2;
+      flex-grow: 1;
     }
     &-link {
       display: block;
       position: relative;
-      border-bottom: 1px solid transparent;
-      letter-spacing: 0.08em;
-      transition: background-color 0.14s linear;
-      @include max {
-        padding: 0.7rem 1.4rem;
-        font-size: 1.2rem;
-      }
+      padding: 1.6rem 0.8rem;
+      font-size: 2rem;
+      background: $color-white;
       @include min {
-        padding: 0.5rem 0.5rem;
-      }
-      &:before {
-        content: '';
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        bottom: 0;
-        left: calc(50% - 6px / 2);
-        opacity: 0;
-        background-color: currentColor;
-        border-radius: 50%;
-      }
-      @include min {
-        &:hover:before {
-          opacity: 1;
-        }
+        padding: 0.8rem;
       }
     }
   }

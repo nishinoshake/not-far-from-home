@@ -27,9 +27,8 @@ export default {
 
 <style lang="scss" scoped>
 .prefecture {
-  padding: 0 2rem;
+  padding: 0 $padding;
   &-item {
-    max-width: $max-table-width;
     margin: 0 auto;
     @include border;
   }

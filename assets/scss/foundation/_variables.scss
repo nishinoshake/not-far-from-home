@@ -5,21 +5,23 @@
 // -----------------------------------------------------
 $color-black: #000;
 $color-dark: #222;
-$color-light: #333;
 $color-muted: #666;
 $color-gray: #cacaca;
 $color-yellow: #fff59d;
-$color-snow: #f8f8f8;
+$color-link: #0077c2;
+$color-snow: #fafafa;
 $color-white: #fff;
-$color-font: $color-light;
+$color-font: $color-dark;
+$color-fill: $color-dark;
+$color-border: $color-dark;
 
 // -----------------------------------------------------
 // size
 // -----------------------------------------------------
-$mq-max: 740px;
+$mq-max: 800px;
 $mq-min: $mq-max+1;
-$max-table-width: 520px;
-$margin: 3rem;
+$padding: 4rem;
+$border-width: 0.4rem;
 
 // -----------------------------------------------------
 // easing

@@ -3,6 +3,7 @@
     <AboutThisSite />
     <AboutPoint />
     <AboutPrivacy />
+    <AboutAd />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import AboutThisSite from '@/components/about/AboutThisSite'
 import AboutPoint from '@/components/about/AboutPoint'
 import AboutPrivacy from '@/components/about/AboutPrivacy'
+import AboutAd from '@/components/about/AboutAd'
 import { buildMeta } from '@/lib/meta'
 
 export default {
@@ -19,7 +21,8 @@ export default {
   components: {
     AboutThisSite,
     AboutPoint,
-    AboutPrivacy
+    AboutPrivacy,
+    AboutAd
   }
 }
 </script>

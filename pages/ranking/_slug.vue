@@ -8,14 +8,14 @@
     </h2>
     <div class="ranking-description">
       <p class="ranking-description-text">
-        {{ prefName }}で<span class="pc">、</span
-        ><br class="sp" />映画館に行きやすい駅は<span class="pc">、</span
-        ><br class="sp" />「{{ topStationName }}」です。
+        {{ prefName }}で、<br />映画館に行きやすい駅は、<br />「{{
+          topStationName
+        }}駅」です。
       </p>
       <p class="ranking-description-text">
         駅から<span class="ranking-description-mark"
           >半径{{ selectedDistance }}km</span
-        >以内に<br class="sp" /><span class="ranking-description-mark"
+        >以内に<br /><span class="ranking-description-mark"
           >{{ numberOfCinemas }}個</span
         >の映画館があります。
       </p>
@@ -51,7 +51,7 @@ export default {
       return this.stations ? this.stations[0] : null
     },
     topStationName() {
-      return this.topStation ? `${this.topStation.name}駅` : ''
+      return this.topStation ? this.topStation.name : ''
     },
     topStationRoman() {
       return this.topStation ? this.topStation.roman : ''
@@ -89,64 +89,40 @@ export default {
   &-station {
     display: flex;
     justify-content: center;
-    margin-bottom: $margin;
+    margin-bottom: 4rem;
     &-row {
-      padding: 1rem 3rem;
-      letter-spacing: 0.1em;
-      color: $color-white;
-      background-color: $color-dark;
+      padding: 1.6rem 5rem;
+      line-height: 1;
+      // color: $color-white;
+      // background-color: $color-fill;
+      @include border;
     }
     &-name {
       display: block;
-      font-size: 1.6rem;
+      letter-spacing: normal;
+      letter-spacing: 0.3em;
+      @include font-xl;
     }
     &-roman {
-      margin-top: 0.2rem;
+      margin-top: 1.4rem;
       display: block;
-      font-size: 1.2rem;
+      letter-spacing: 0.12em;
       @include font-en;
+      @include font-m;
     }
   }
   &-description {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     &-text {
-      line-height: 2;
-      &:nth-child(n + 2) {
-        @include max {
-          margin-top: 0.8em;
-        }
+      @include font-l;
+      + .ranking-description-text {
+        margin-top: 1.5rem;
       }
     }
     &-mark {
       display: inline-block;
       margin: 0 0.2em;
-      line-height: 1.2;
-      font-weight: bold;
       background: linear-gradient(transparent 60%, $color-yellow 60%);
-    }
-    &-link {
-      display: flex;
-      justify-content: center;
-      margin-top: $margin;
-      &-text {
-        min-width: 12rem;
-        min-height: 3.5rem;
-        padding: 0.8rem 2rem;
-        border-radius: 999em;
-        border: 1px solid $color-dark;
-        background-color: $color-white;
-        transition: color 0.14s linear, background-color 0.14s linear;
-        @include center-flex;
-        @include max {
-        }
-        @include min {
-          bottom: 2rem;
-          &:hover {
-            color: $color-white;
-            background-color: $color-dark;
-          }
-        }
-      }
     }
   }
 }

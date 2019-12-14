@@ -54,63 +54,55 @@
 // -----------------------------------------------------
 // Layout
 // -----------------------------------------------------
-@mixin inside {
-  @include min {
-    max-width: $width-max;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 @mixin inside-small {
-  @include max {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-  }
-  @include min {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 // -----------------------------------------------------
 // Font
 // -----------------------------------------------------
 @mixin font-en {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Gothic A1', sans-serif;
+  // font-family: 'Istok Web', sans-serif;
+}
+@mixin font-grande {
+  font-size: 3rem;
+}
+@mixin font-xl {
+  font-size: 2.5rem;
+}
+@mixin font-l {
+  font-size: 2rem;
+}
+@mixin font-m {
+  font-size: 1.8rem;
+}
+@mixin font-s {
+  font-size: 1.4rem;
+}
+@mixin font-xs {
+  font-size: 1rem;
 }
 
 // -----------------------------------------------------
 // Border
 // -----------------------------------------------------
 @mixin border {
-  border: 1px solid $color-gray;
+  border: $border-width solid $color-border;
 }
 @mixin border-top {
-  border-top: 1px solid $color-gray;
+  border-top: $border-width solid $color-border;
 }
 
 @mixin border-bottom {
-  border-bottom: 1px solid $color-gray;
+  border-bottom: $border-width solid $color-border;
 }
 
 @mixin border-right {
-  border-right: 1px solid $color-gray;
+  border-right: $border-width solid $color-border;
 }
 
 @mixin border-left {
-  border-left: 1px solid $color-gray;
-}
-
-@mixin dot-border-vertical($position: left) {
-  background-size: 1px 6px;
-  background-position: $position top;
-  background-repeat: repeat-y;
-  background-image: linear-gradient(to bottom, $color-gray, $color-gray 4px, transparent 4px, transparent 6px);
-}
-
-@mixin dot-border-horizontal($position: top) {
-  background-size: 6px 1px;
-  background-position: left $position;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, $color-gray, $color-gray 4px, transparent 4px, transparent 6px);
+  border-left: $border-width solid $color-border;
 }

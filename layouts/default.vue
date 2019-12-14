@@ -1,6 +1,5 @@
 <template>
   <div class="container" :class="`mod-${routeName}`" id="container">
-    <LayoutHeader />
     <main class="main">
       <nuxt />
     </main>
@@ -9,11 +8,10 @@
 </template>
 
 <script>
-import LayoutHeader from './LayoutHeader'
 import LayoutFooter from './LayoutFooter'
 
 export default {
-  components: { LayoutHeader, LayoutFooter },
+  components: { LayoutFooter },
   computed: {
     routeName() {
       return this.$route.name
@@ -65,6 +63,7 @@ button {
   outline: none;
   color: inherit;
   font-size: inherit;
+  font-family: inherit;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -72,7 +71,7 @@ button {
 }
 
 html {
-  font-size: 14px;
+  font-size: 2vw;
   @include min {
     font-size: 16px;
   }
@@ -81,28 +80,20 @@ html {
 body {
   color: $color-font;
   text-align: center;
-  line-height: 1.6;
-  letter-spacing: 0.08em;
-  font-feature-settings: 'palt';
-  font-family: sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+  font-family: YakuHanJP, 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  background-color: $color-snow;
 }
 
 .container {
   max-width: $mq-max;
   margin: 0 auto;
+  padding-top: 6rem;
+  background-color: $color-white;
   &.mod-archive {
     padding-bottom: 5.5rem;
-  }
-}
-
-.pc {
-  @include max {
-    display: none;
-  }
-}
-.sp {
-  @include min {
-    display: none;
   }
 }
 
@@ -114,21 +105,6 @@ body {
   &-enter,
   &-leave-to {
     opacity: 0;
-  }
-}
-
-@keyframes loading {
-  0% {
-    content: '.';
-  }
-  25% {
-    content: '..';
-  }
-  50% {
-    content: '...';
-  }
-  75% {
-    content: '....';
   }
 }
 </style>

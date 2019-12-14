@@ -6,7 +6,7 @@
         target="_blank"
         rel="noopener"
         class="cinema-link"
-        >{{ cinema.name }} （{{ cinema.distance }}km）</a
+        >{{ cinema.name }}</a
       >
     </li>
   </ul>
@@ -28,20 +28,22 @@ export default {
 <style lang="scss" scoped>
 .cinema {
   &-item {
+    @include font-m;
     &:nth-child(n + 2) {
-      @include max {
-        margin-top: 0.6rem;
-      }
-      @include min {
-        margin-top: 0.4rem;
-      }
+      margin-top: 0.3rem;
     }
   }
   &-link {
+    position: relative;
     padding: 0.1rem 0;
-    @include max {
-      font-size: 0.9rem;
-    }
+  }
+  &-distance {
+    position: absolute;
+    bottom: 0.1rem;
+    padding-left: 0.5rem;
+    color: $color-muted;
+    @include font-en;
+    @include font-xs;
   }
 }
 </style>

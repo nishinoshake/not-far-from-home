@@ -6,6 +6,7 @@ export const state = () => ({
   selectedDistance: DEFAULT_DISTANCE_KM,
   selectedPrefectureId: null,
   isReady: false,
+  hasHistory: false,
   rankings: {},
   prefectures: [],
   entities: {
@@ -81,6 +82,9 @@ export const mutations = {
   },
   setIsReady(state) {
     state.isReady = true
+  },
+  setHasHistory(state) {
+    state.hasHistory = true
   }
 }
 

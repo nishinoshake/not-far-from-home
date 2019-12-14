@@ -1,11 +1,11 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="{ 'mod-home': !isIndex }">
     <transition name="fade">
       <nav class="footer-nav" v-if="isIndex">
         <ul class="footer-list">
           <li class="footer-item">
             <nuxt-link to="/about/" class="footer-link"
-              >このサイトについて</nuxt-link
+              >仕組みとプライバシー</nuxt-link
             >
           </li>
         </ul>
@@ -13,18 +13,30 @@
     </transition>
 
     <transition name="footer-home">
-      <nuxt-link v-if="!isIndex" to="/" class="footer-home"
-        >都道府県を選ぶ</nuxt-link
-      >
+      <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
+        都道府県を選ぶ
+      </button>
     </transition>
   </footer>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   computed: {
+    ...mapState(['hasHistory']),
     isIndex() {
       return this.$route.name === 'index'
+    }
+  },
+  methods: {
+    handleClickHome() {
+      if (this.hasHistory) {
+        this.$router.go(-1)
+      } else {
+        this.$router.push('/')
+      }
     }
   }
 }
@@ -32,23 +44,11 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
+  height: 20rem;
   position: relative;
-  margin-top: $margin;
   @include center-flex;
-  @include max {
-    height: 13rem;
-  }
   @include min {
-    height: 7.5rem;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    width: $margin;
-    height: 1px;
-    top: 0;
-    left: calc(50% - #{$margin} / 2);
-    background-color: $color-gray;
+    height: 12rem;
   }
   &-list {
     display: flex;
@@ -73,48 +73,44 @@ export default {
     }
   }
   &-link {
-    padding: 0.6rem 1rem;
-    background-color: $color-white;
-    @include font-en;
+    padding-bottom: 0.2rem;
+    @include font-l;
+    @include border-bottom;
   }
   &-home {
-    width: 16rem;
-    height: 3.5rem;
+    width: 26rem;
+    height: 7rem;
     position: fixed;
     z-index: 10;
-    left: calc(50% - #{16rem / 2});
+    bottom: 6.5rem;
+    left: calc(50% - #{26rem / 2});
     border-radius: 999em;
-    border: 1px solid $color-dark;
     background-color: $color-white;
     transition: color 0.14s linear, background-color 0.14s linear;
     @include center-flex;
-    @include max {
-      bottom: 5.5rem;
-    }
+    @include font-l;
+    @include border;
     @include min {
-      bottom: 2rem;
-      &:hover {
-        color: $color-white;
-        background-color: $color-dark;
-      }
+      width: 28rem;
+      height: 6rem;
+      bottom: 3rem;
+      left: calc(50% - #{28rem / 2});
     }
     &:before {
       content: '←';
-      left: 1.5rem;
+      left: 2rem;
       @include center-vertical;
     }
     &-enter-active {
-      transition: transform 0.4s 0.22s $easeOutQuart;
+      transition: transform 0.4s 0.3s $easeOutQuart;
     }
     &-leave-active {
       transition: opacity 0.12s linear;
     }
     &-enter {
-      @include max {
-        transform: translateY(100%) translateY(5.5rem);
-      }
+      transform: translateY(100%) translateY(14rem);
       @include min {
-        transform: translateY(100%) translateY(2rem);
+        transform: translateY(100%) translateY(9rem);
       }
     }
     &-leave-to {
