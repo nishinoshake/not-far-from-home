@@ -5,7 +5,7 @@
         <ul class="footer-list">
           <li class="footer-item">
             <nuxt-link to="/about/" class="footer-link"
-              >サイトについてざっくり</nuxt-link
+              >当サイトの仕組みと補足</nuxt-link
             >
           </li>
         </ul>
@@ -14,7 +14,7 @@
 
     <transition name="footer-home">
       <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
-        都道府県選択に戻りたい
+        都道府県を選び直したい
       </button>
     </transition>
   </footer>

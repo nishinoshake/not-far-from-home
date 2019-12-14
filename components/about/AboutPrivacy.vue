@@ -7,7 +7,7 @@
         target="_blank"
         rel="noopener"
         >グーグルアナリティクス</a
-      ><br />というサービスを使用中
+      ><br />をサイトに導入してます
     </p>
     <p class="about-text">
       オプトアウトの手順等は<br /><a
