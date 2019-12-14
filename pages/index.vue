@@ -73,7 +73,7 @@ export default {
     display: flex;
     justify-content: center;
     line-height: 1;
-    letter-spacing: 0;
+    letter-spacing: 0.06em;
     margin-bottom: 4rem;
     @include font-xl;
     span {
@@ -83,8 +83,7 @@ export default {
   }
   &-copy,
   &-please {
-    letter-spacing: 0.08em;
-    text-align: center;
+    letter-spacing: 0.06em;
     @include font-xl;
     * + * {
       margin-top: 3rem;
@@ -106,7 +105,6 @@ export default {
     &-name {
       margin-bottom: 2.5rem;
       font-size: 2.5rem;
-      text-align: center;
     }
   }
   &-prefecture {
