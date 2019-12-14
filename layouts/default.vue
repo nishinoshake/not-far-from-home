@@ -35,7 +35,7 @@ if (process.browser) {
   WebFont = require('webfontloader')
 }
 
-const MIN_WAIT_MS = 500
+const MIN_WAIT_MS = 800
 const MAX_WAIT_MS = 5000
 
 export default {

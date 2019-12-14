@@ -1,6 +1,6 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">＜データの収集＞</h2>
+    <h2 class="about-title">＜ データの収集 ＞</h2>
     <p class="about-text">
       駅は<a href="http://www.ekidata.jp" target="_blank" rel="noopener"
         >駅データ.jp</a
@@ -14,7 +14,7 @@
     <p class="about-text">
       これらの<a :href="googleIt('API とは')" target="_blank" rel="noopener"
         >API</a
-      >がなければ<br />このサイトは作れませんでした<br />ありがとうございました
+      >のおかげで<br />制作の手間を減らせました<br />ありがとうございました
     </p>
     <p class="about-text">
       掲載内容に関するご連絡は<br /><a href="mailto:lawson.and.7.11@gmail.com"

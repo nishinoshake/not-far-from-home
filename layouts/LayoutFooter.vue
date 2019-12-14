@@ -44,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  height: 20rem;
+  height: 23rem;
   position: relative;
   @include center-flex;
   @include min {
@@ -73,7 +73,7 @@ export default {
     }
   }
   &-link {
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.1rem;
     @include font-l;
     @include border-bottom;
   }
@@ -82,7 +82,7 @@ export default {
     height: 7rem;
     position: fixed;
     z-index: 10;
-    bottom: 6.5rem;
+    bottom: 8rem;
     left: calc(50% - #{26rem / 2});
     border-radius: 999em;
     background-color: $color-white;
@@ -102,7 +102,7 @@ export default {
       @include center-vertical;
     }
     &-enter-active {
-      transition: transform 0.5s 0.05s $easeOutQuart;
+      transition: transform 0.5s 0.3s $easeOutQuart;
     }
     &-leave-active {
       pointer-events: none;

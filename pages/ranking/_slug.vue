@@ -87,7 +87,6 @@ export default {
   &-station {
     display: flex;
     justify-content: center;
-    margin-bottom: 4rem;
     padding: 0 $padding;
     &-row {
       padding: 1.6rem 5rem;
@@ -101,7 +100,7 @@ export default {
       @include font-xl;
     }
     &-roman {
-      margin: 1.4rem -2.5rem 0;
+      margin: 1.2rem -2.5rem 0;
       display: block;
       letter-spacing: 0.12em;
       @include font-en;
@@ -109,11 +108,11 @@ export default {
     }
   }
   &-description {
-    margin-bottom: 5rem;
+    margin: 4rem 0 4.5rem;
     &-text {
       @include font-l;
       + .ranking-description-text {
-        margin-top: 1.5rem;
+        margin-top: 1rem;
       }
     }
     &-mark {

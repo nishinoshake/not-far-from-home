@@ -10,11 +10,11 @@
     position: relative;
     @include inside-small;
     + .about-section {
-      margin-top: 8rem;
+      margin-top: 7rem;
     }
   }
   &-title {
-    margin-bottom: 3rem;
+    margin-bottom: 2.4rem;
     font-size: 1.2rem;
     line-height: 1;
     @include font-xl;
@@ -22,7 +22,7 @@
   &-text {
     @include font-l;
     + .about-text {
-      margin-top: 2rem;
+      margin-top: 1.2rem;
     }
   }
   &-list {
