@@ -1,14 +1,16 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">＜ ランキングの作成 ＞</h2>
+    <h2 class="about-title">＜ランキングの仕組み＞</h2>
     <p class="about-text">
-      各都道府県のランキングは<br />映画館数と距離から算出した<br />ポイントをもとに作成しています
+      映画館数と距離をもとに<br />適当にポイントを計算し<br />ランキングを作りました
     </p>
     <p class="about-text">
-      個人的に徒歩が辛いと感じる<br />1.6km(20分)をベースの10pt<br />0kmのときを最高の20ptとして<br />距離に応じて配点しています
-    </p>
-    <p class="about-text">
-      計算に使用している距離は<br />経路を加味しない直線距離です
+      ランキングの詳しい話は<br /><a
+        href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
+        target="_blank"
+        rel="noopener"
+        >別ページ</a
+      >にまとめてます
     </p>
   </AboutSection>
 </template>

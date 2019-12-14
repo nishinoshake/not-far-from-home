@@ -112,7 +112,7 @@ export default {
     &-text {
       @include font-l;
       + .ranking-description-text {
-        margin-top: 1rem;
+        margin-top: 2rem;
       }
     }
     &-mark {

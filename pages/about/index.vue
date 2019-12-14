@@ -1,6 +1,5 @@
 <template>
   <div class="about">
-    <AboutThisSite />
     <AboutPoint />
     <AboutPrivacy />
     <AboutAd />
@@ -8,7 +7,6 @@
 </template>
 
 <script>
-import AboutThisSite from '@/components/about/AboutThisSite'
 import AboutPoint from '@/components/about/AboutPoint'
 import AboutPrivacy from '@/components/about/AboutPrivacy'
 import AboutAd from '@/components/about/AboutAd'
@@ -19,7 +17,6 @@ export default {
     return buildMeta('このサイトについて')
   },
   components: {
-    AboutThisSite,
     AboutPoint,
     AboutPrivacy,
     AboutAd

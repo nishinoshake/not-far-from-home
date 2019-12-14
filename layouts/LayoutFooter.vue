@@ -5,7 +5,7 @@
         <ul class="footer-list">
           <li class="footer-item">
             <nuxt-link to="/about/" class="footer-link"
-              >仕組みとプライバシー</nuxt-link
+              >サイトについてざっくり</nuxt-link
             >
           </li>
         </ul>
@@ -14,7 +14,7 @@
 
     <transition name="footer-home">
       <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
-        都道府県を選ぶ
+        都道府県選択に戻りたい
       </button>
     </transition>
   </footer>
@@ -78,12 +78,12 @@ export default {
     @include border-bottom;
   }
   &-home {
-    width: 26rem;
+    width: 34rem;
     height: 7rem;
     position: fixed;
     z-index: 10;
     bottom: 8rem;
-    left: calc(50% - #{26rem / 2});
+    left: calc(50% - #{34rem / 2});
     border-radius: 999em;
     background-color: $color-white;
     transition: color 0.14s linear, background-color 0.14s linear;
@@ -91,10 +91,8 @@ export default {
     @include font-l;
     @include border;
     @include min {
-      width: 28rem;
       height: 6rem;
       bottom: 3rem;
-      left: calc(50% - #{28rem / 2});
     }
     &:before {
       content: '←';

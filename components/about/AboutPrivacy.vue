@@ -1,38 +1,22 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">＜ プライバシーポリシー ＞</h2>
+    <h2 class="about-title">＜プライバシポリシー＞</h2>
     <p class="about-text">
-      本サイトではアクセス状況把握のため<br />Google Analyticsを利用しています
+      アクセス状況把握のため<br /><a
+        href="https://marketingplatform.google.com/intl/ja/about/analytics/"
+        target="_blank"
+        rel="noopener"
+        >グーグルアナリティクス</a
+      ><br />というサービスを使用中
     </p>
     <p class="about-text">
-      収集している情報や利用方法<br />オプトアウトの手順については<br />下記のリンクからご確認ください
+      オプトアウトの手順等は<br /><a
+        href="https://support.google.com/analytics/topic/2919631"
+        target="_blank"
+        rel="noopener"
+        >こちら</a
+      >でご確認ください
     </p>
-    <ul class="about-list">
-      <li class="about-item">
-        <a
-          href="https://policies.google.com/technologies/types?hl=ja"
-          target="_blank"
-          rel="noopener"
-          >Cookieの種類</a
-        >
-      </li>
-      <li class="about-item">
-        <a
-          href="https://policies.google.com/technologies/cookies?hl=ja"
-          target="_blank"
-          rel="noopener"
-          >Cookieの利用方法</a
-        >
-      </li>
-      <li class="about-item">
-        <a
-          href="https://support.google.com/analytics/answer/181881?hl=ja"
-          target="_blank"
-          rel="noopener"
-          >オプトアウトアドオン</a
-        >
-      </li>
-    </ul>
   </AboutSection>
 </template>
 
