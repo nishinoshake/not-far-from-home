@@ -102,19 +102,17 @@ export default {
       @include center-vertical;
     }
     &-enter-active {
-      transition: transform 0.4s 0.3s $easeOutQuart;
+      transition: transform 0.5s 0.05s $easeOutQuart;
     }
     &-leave-active {
-      transition: opacity 0.12s linear;
+      pointer-events: none;
+      transition: 1ms;
     }
     &-enter {
       transform: translateY(100%) translateY(14rem);
       @include min {
         transform: translateY(100%) translateY(9rem);
       }
-    }
-    &-leave-to {
-      opacity: 0;
     }
   }
 }

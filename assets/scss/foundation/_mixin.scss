@@ -63,8 +63,7 @@
 // Font
 // -----------------------------------------------------
 @mixin font-en {
-  font-family: 'Gothic A1', sans-serif;
-  // font-family: 'Istok Web', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 @mixin font-grande {
   font-size: 3rem;
@@ -82,7 +81,7 @@
   font-size: 1.4rem;
 }
 @mixin font-xs {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 // -----------------------------------------------------

@@ -65,16 +65,6 @@ export default {
       {
         rel: 'shortcut icon',
         href: '/img/favicon.ico'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Gothic+A1:700|Istok+Web:700|Noto+Sans+JP:700&amp;display=swap&amp;subset=japanese'
       }
     ]
   },

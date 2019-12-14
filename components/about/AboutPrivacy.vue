@@ -2,11 +2,10 @@
   <AboutSection>
     <h2 class="about-title">＜プライバシーポリシー＞</h2>
     <p class="about-text">
-      本サイトでは、アクセス状況把握のため、<br />Google
-      Analyticsを利用しています。
+      本サイトではアクセス状況把握のため<br />Google Analyticsを利用しています
     </p>
     <p class="about-text">
-      収集している情報や利用方法、<br />オプトアウトの手順については、<br />下記のリンクからご確認いただけます。
+      収集している情報や利用方法<br />オプトアウトの手順については<br />下記のリンクからご確認いただけます
     </p>
     <ul class="about-list">
       <li class="about-item">

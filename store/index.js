@@ -21,7 +21,7 @@ export const actions = {
    * 静的生成前のデータ取得
    *
    * ランキング/映画館/都道府県/路線のJSONを取得。
-   * ここで通信エラーなどの例外が発生するとCIが止まるので、予期しないデプロイを防げる。
+   * ここで通信エラーなどの例外が発生するとCIが止まるので予期しないデプロイを防げる。
    */
   nuxtServerInit: async function({ state, dispatch, commit }) {
     await Promise.all([

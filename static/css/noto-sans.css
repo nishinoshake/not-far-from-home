@@ -1,0 +1,11 @@
+/* n7 */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Noto Sans Japanese Bold'),
+    local('NotoSansJapanese-Bold'),
+    url(/fonts/noto-sans-bold.woff) format('woff'),
+    url(/fonts/noto-sans-bold.woff2) format('woff2');
+}

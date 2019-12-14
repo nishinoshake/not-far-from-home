@@ -16,7 +16,7 @@ describe('normalizer', () => {
       expect(normalize(collection, 'key')).toEqual(expected)
     })
 
-    test('第2引数を指定しない場合、idをキーに変換できる', () => {
+    test('第2引数を指定しない場合idをキーに変換できる', () => {
       const collection = [
         { id: 10, name: 'hoge' },
         { id: 20, name: 'fuga' }

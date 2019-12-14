@@ -6,7 +6,8 @@
         target="_blank"
         rel="noopener"
         class="cinema-link"
-        >{{ cinema.name }}</a
+        >{{ cinema.name
+        }}<span class="cinema-distance">{{ cinema.distance }}km</span></a
       >
     </li>
   </ul>
@@ -39,7 +40,7 @@ export default {
   }
   &-distance {
     position: absolute;
-    bottom: 0.1rem;
+    bottom: 0.1em;
     padding-left: 0.5rem;
     color: $color-muted;
     @include font-en;

@@ -42,7 +42,7 @@ export default {
   &-station {
     &-item {
       position: relative;
-      padding: 3rem 1rem;
+      padding: 3rem 4rem 3.5rem;
       &:not(:last-child) {
         @include border-bottom;
       }
@@ -70,10 +70,10 @@ export default {
       @include border-right;
       @include border-bottom;
       span {
-        min-width: 2.2em;
-        min-height: 2.2em;
+        min-width: 2em;
+        min-height: 2em;
         display: block;
-        padding: 0.9rem 1rem 0.7rem;
+        padding: 0.8rem 1rem;
         @include center-flex;
       }
     }

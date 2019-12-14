@@ -8,16 +8,14 @@
     </h2>
     <div class="ranking-description">
       <p class="ranking-description-text">
-        {{ prefName }}で、<br />映画館に行きやすい駅は、<br />「{{
-          topStationName
-        }}駅」です。
+        {{ prefName }}の1位は{{ topStationName }}駅
       </p>
       <p class="ranking-description-text">
         駅から<span class="ranking-description-mark"
           >半径{{ selectedDistance }}km</span
         >以内に<br /><span class="ranking-description-mark"
           >{{ numberOfCinemas }}個</span
-        >の映画館があります。
+        >の映画館があります
       </p>
     </div>
     <PrefectureItem :pref="pref" :stations="stations" />
@@ -90,11 +88,10 @@ export default {
     display: flex;
     justify-content: center;
     margin-bottom: 4rem;
+    padding: 0 $padding;
     &-row {
       padding: 1.6rem 5rem;
       line-height: 1;
-      // color: $color-white;
-      // background-color: $color-fill;
       @include border;
     }
     &-name {
@@ -104,7 +101,7 @@ export default {
       @include font-xl;
     }
     &-roman {
-      margin-top: 1.4rem;
+      margin: 1.4rem -2.5rem 0;
       display: block;
       letter-spacing: 0.12em;
       @include font-en;
@@ -122,7 +119,12 @@ export default {
     &-mark {
       display: inline-block;
       margin: 0 0.2em;
-      background: linear-gradient(transparent 60%, $color-yellow 60%);
+      background: linear-gradient(
+        transparent 60%,
+        $color-yellow 60%,
+        $color-yellow 90%,
+        transparent 90%
+      );
     }
   }
 }
