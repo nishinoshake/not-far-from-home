@@ -14,7 +14,7 @@
     }
   }
   &-title {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
     font-size: 1.2rem;
     line-height: 1;
     @include font-xl;

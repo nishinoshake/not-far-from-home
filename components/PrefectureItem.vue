@@ -27,7 +27,6 @@ export default {
 
 <style lang="scss" scoped>
 .prefecture {
-  padding: 0 $padding;
   &-item {
     margin: 0 auto;
     @include border;

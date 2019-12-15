@@ -23,3 +23,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.about {
+  padding-top: 6rem;
+}
+</style>

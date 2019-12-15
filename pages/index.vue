@@ -69,6 +69,7 @@ export default {
 .shindan {
   position: relative;
   z-index: 1;
+  padding-top: 6rem;
   &-title {
     display: flex;
     justify-content: center;

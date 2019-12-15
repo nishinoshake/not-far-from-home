@@ -5,7 +5,7 @@
         <ul class="footer-list">
           <li class="footer-item">
             <nuxt-link to="/about/" class="footer-link"
-              >当サイトの仕組みと補足</nuxt-link
+              >仕組みプライバシー宣伝</nuxt-link
             >
           </li>
         </ul>

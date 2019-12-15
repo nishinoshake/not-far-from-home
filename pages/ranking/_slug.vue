@@ -1,10 +1,12 @@
 <template>
   <section class="ranking" v-if="result">
     <h2 class="ranking-station">
-      <a class="ranking-station-row">
-        <span class="ranking-station-name">{{ topStationName }}</span>
-        <span class="ranking-station-roman">{{ topStationRoman }}</span>
-      </a>
+      <span class="ranking-station-name">
+        <span v-for="(t, index) in topStationName" :key="index">{{ t }}</span>
+      </span>
+      <span class="ranking-station-roman">
+        <span v-for="(t, index) in topStationRoman" :key="index">{{ t }}</span>
+      </span>
     </h2>
     <div class="ranking-description">
       <p class="ranking-description-text">
@@ -51,8 +53,14 @@ export default {
     topStationName() {
       return this.topStation ? this.topStation.name : ''
     },
+    topStationNameLength() {
+      return this.topStationName ? this.topStationName.length : 0
+    },
     topStationRoman() {
       return this.topStation ? this.topStation.roman : ''
+    },
+    topStationRomanLength() {
+      return this.topStationRoman ? this.topStationRoman.length : 0
     },
     topStationCinemas() {
       return this.topStation ? this.topStation.cinemas : []
@@ -84,31 +92,38 @@ export default {
 
 <style lang="scss" scoped>
 .ranking {
+  padding: $padding $padding 0;
   &-station {
-    display: flex;
-    justify-content: center;
-    padding: 0 $padding;
-    &-row {
-      padding: 1.6rem 5rem;
-      line-height: 1;
-      @include border;
+    padding: 6rem $padding;
+    line-height: 1;
+    letter-spacing: 0;
+    overflow: hidden;
+    @include border;
+    &-name,
+    &-roman {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
     }
     &-name {
-      display: block;
-      letter-spacing: normal;
-      letter-spacing: 0.3em;
-      @include font-xl;
+      @include font-grande;
+      span {
+        margin: 0 0.15em;
+      }
     }
     &-roman {
-      margin: 1.2rem -2.5rem 0;
-      display: block;
-      letter-spacing: 0.12em;
+      margin-top: 1.4rem;
       @include font-en;
-      @include font-m;
+      @include font-l;
+      span {
+        margin: 0 0.02em;
+      }
     }
   }
   &-description {
-    margin: 4rem 0 4.5rem;
+    padding: 5.5rem 0;
+    @include border-left;
+    @include border-right;
     &-text {
       @include font-l;
       + .ranking-description-text {
@@ -125,6 +140,24 @@ export default {
         transparent 90%
       );
     }
+  }
+}
+
+@keyframes from-left {
+  0% {
+    transform: translateX(-700px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes from-right {
+  0% {
+    transform: translateX(700px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 </style>

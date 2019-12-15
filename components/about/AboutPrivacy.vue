@@ -1,6 +1,6 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">＜プライバシポリシー＞</h2>
+    <h2 class="about-title">＝プライバシポリシー＝</h2>
     <p class="about-text">
       アクセス状況把握のため<br /><a
         href="https://marketingplatform.google.com/intl/ja/about/analytics/"

@@ -151,12 +151,12 @@ body {
   letter-spacing: 0.1em;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
+  background-color: $color-snow;
 }
 
 .container {
   max-width: $mq-max;
   margin: 0 auto;
-  padding-top: 6rem;
   background-color: $color-white;
 }
 

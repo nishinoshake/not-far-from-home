@@ -1,16 +1,16 @@
 <template>
   <AboutSection>
-    <h2 class="about-title">＜ランキングの仕組み＞</h2>
+    <h2 class="about-title">＝ランキングの仕組み＝</h2>
     <p class="about-text">
-      映画館数と距離をもとに<br />適当にポイントを算出し<br />ランキングを作りました
+      各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています
     </p>
     <p class="about-text">
-      ランキングの詳しい話は<br /><a
+      仕組みの詳細については<br />ここでは蛇足になるので<br /><a
         href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
         target="_blank"
         rel="noopener"
         >別ページ</a
-      >にまとめてます
+      >にまとめました
     </p>
   </AboutSection>
 </template>
