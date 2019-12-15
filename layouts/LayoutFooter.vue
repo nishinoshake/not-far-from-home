@@ -14,7 +14,7 @@
 
     <transition name="footer-home">
       <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
-        都道府県を選び直したい
+        別の都道府県も見てみる
       </button>
     </transition>
   </footer>
