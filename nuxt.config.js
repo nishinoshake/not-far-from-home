@@ -78,6 +78,7 @@ export default {
   },
   modules: [
     '@nuxtjs/dotenv',
+    '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     [
       '@nuxtjs/google-analytics',
@@ -92,5 +93,17 @@ export default {
       '@/assets/scss/foundation/_variables.scss',
       '@/assets/scss/foundation/_mixin.scss'
     ]
+  },
+  manifest: {
+    name: SITE_TITLE,
+    short_name: SITE_TITLE,
+    lang: 'ja',
+    orientation: 'portrait',
+    theme_color: '#ffffff',
+    background_color: '#ffffff',
+    start_url: '/index.html'
+  },
+  workbox: {
+    dev: true
   }
 }
