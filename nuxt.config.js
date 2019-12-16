@@ -102,8 +102,5 @@ export default {
     theme_color: '#ffffff',
     background_color: '#ffffff',
     start_url: '/index.html'
-  },
-  workbox: {
-    dev: true
   }
 }

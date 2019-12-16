@@ -42,8 +42,13 @@ export default {
   components: { LayoutFooter },
   data() {
     return {
-      isLoaded: false
+      isLoaded: true
     }
+  },
+  created() {
+    this.$nextTick(() => {
+      this.isLoaded = false
+    })
   },
   computed: {
     routeName() {
