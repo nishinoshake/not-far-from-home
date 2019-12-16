@@ -68,6 +68,13 @@ export default {
       }
     ]
   },
+  build: {
+    html: {
+      minify: {
+        collapseWhitespace: true
+      }
+    }
+  },
   generate: {
     routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`)
   },
