@@ -29,12 +29,6 @@
 <script>
 import LayoutFooter from './LayoutFooter'
 
-let WebFont
-
-if (process.browser) {
-  WebFont = require('webfontloader')
-}
-
 const MIN_WAIT_MS = 800
 const MAX_WAIT_MS = 5000
 
@@ -42,13 +36,8 @@ export default {
   components: { LayoutFooter },
   data() {
     return {
-      isLoaded: true
+      isLoaded: false
     }
-  },
-  created() {
-    this.$nextTick(() => {
-      this.isLoaded = false
-    })
   },
   computed: {
     routeName() {
@@ -69,7 +58,7 @@ export default {
   methods: {
     loadFonts() {
       return new Promise(resolve => {
-        WebFont.load({
+        this.$WebFont.load({
           custom: {
             families: ['Noto Sans JP', 'Lato'],
             urls: [

@@ -76,6 +76,7 @@ export default {
       process.env.BASE_URL ||
       'https://s3-ap-northeast-1.amazonaws.com/storage.not-far-from-home.cc/api'
   },
+  plugins: [{ src: '@/plugins/inject-webfont-loader.js', mode: 'client' }],
   modules: [
     '@nuxtjs/dotenv',
     '@nuxtjs/pwa',
