@@ -66,8 +66,9 @@
   font-family: 'Lato', sans-serif;
 }
 @mixin font-main {
-  font-size: 3.8rem;
+  font-size: 4.6rem;
   letter-spacing: -0.01em;
+  line-height: 1.5;
   white-space: nowrap;
 }
 @mixin font-grande {

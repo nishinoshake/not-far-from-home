@@ -13,9 +13,9 @@
       <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
     </div>
     <div class="shindan-please">
-      <p>🎬🎬🎬🎬🎬🎬🎬🎬🎬🎬🎬</p>
+      <p>🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿</p>
       <p>都道府県を選んで下さい</p>
-      <p>🎬🎬🎬🎬🎬🎬🎬🎬🎬🎬🎬</p>
+      <p>🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿</p>
     </div>
     <div class="shindan-area-list">
       <section
@@ -70,22 +70,16 @@ export default {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  padding-top: 6.5rem;
   &-title {
-    margin-bottom: 5.5rem;
-    line-height: 1;
+    margin-top: -0.3em;
     @include font-main;
   }
   &-copy,
   &-please {
-    line-height: 1.5;
     @include font-main;
-    * + * {
-      margin-top: 4rem;
-    }
   }
   &-please {
-    margin: 7rem 0 7.5rem;
+    margin-bottom: 8rem;
   }
   &-area {
     &-list {

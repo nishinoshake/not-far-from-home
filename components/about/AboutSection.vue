@@ -9,21 +9,16 @@
   &-section {
     position: relative;
     + .about-section {
-      margin-top: 10rem;
+      margin-top: 5rem;
     }
   }
   &-title {
-    margin-bottom: 3.5rem;
-    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
     line-height: 1;
-    @include font-main;
+    @include font-xl;
   }
   &-text {
-    line-height: 1.5;
-    @include font-main;
-    + .about-text {
-      margin-top: 2.5rem;
-    }
+    @include font-xl;
   }
   a {
     text-decoration: underline;
