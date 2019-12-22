@@ -150,6 +150,7 @@ body {
 
 .container {
   max-width: $mq-max;
+  min-height: 100vh;
   margin: 0 auto;
   background-color: $color-white;
 }

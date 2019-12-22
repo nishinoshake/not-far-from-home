@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <AboutPoint />
     <AboutPrivacy />
+    <AboutPoint />
     <AboutAd />
   </div>
 </template>

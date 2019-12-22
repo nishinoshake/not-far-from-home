@@ -65,6 +65,9 @@
 @mixin font-en {
   font-family: 'Lato', sans-serif;
 }
+@mixin font-main {
+  font-size: 4.6rem;
+}
 @mixin font-grande {
   font-size: 3rem;
 }

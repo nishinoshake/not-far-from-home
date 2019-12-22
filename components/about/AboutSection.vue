@@ -10,7 +10,7 @@
     position: relative;
     @include inside-small;
     + .about-section {
-      margin-top: 7rem;
+      margin-top: 6rem;
     }
   }
   &-title {
@@ -26,7 +26,7 @@
     }
   }
   a {
-    color: $color-link;
+    text-decoration: underline;
   }
 }
 </style>
