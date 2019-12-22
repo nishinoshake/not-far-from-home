@@ -79,7 +79,7 @@ export default {
     @include font-main;
   }
   &-please {
-    margin-bottom: 8rem;
+    margin: 7.5rem 0 8rem;
   }
   &-area {
     &-list {
