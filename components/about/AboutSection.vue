@@ -8,21 +8,21 @@
 .about {
   &-section {
     position: relative;
-    @include inside-small;
     + .about-section {
-      margin-top: 6rem;
+      margin-top: 10rem;
     }
   }
   &-title {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
     font-size: 1.2rem;
     line-height: 1;
-    @include font-xl;
+    @include font-main;
   }
   &-text {
-    @include font-xl;
+    line-height: 1.5;
+    @include font-main;
     + .about-text {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
   }
   a {

@@ -70,25 +70,22 @@ export default {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  padding-top: 6.5rem;
   &-title {
     margin-bottom: 5.5rem;
     line-height: 1;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
     @include font-main;
   }
   &-copy,
   &-please {
     line-height: 1.5;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
     @include font-main;
     * + * {
       margin-top: 4rem;
     }
   }
   &-please {
-    margin: 10rem 0 10.5rem;
+    margin: 7rem 0 7.5rem;
   }
   &-area {
     &-list {

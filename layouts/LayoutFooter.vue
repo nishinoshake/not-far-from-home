@@ -73,7 +73,6 @@ export default {
     }
   }
   &-link {
-    padding-bottom: 0.1rem;
     @include font-l;
     @include border-bottom;
   }
