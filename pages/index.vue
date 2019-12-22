@@ -13,9 +13,9 @@
       <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
     </div>
     <div class="shindan-please">
-      <p>🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿</p>
+      <p>＝＝＝＝＝＝＝＝＝＝＝</p>
       <p>都道府県を選んで下さい</p>
-      <p>🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿🍿</p>
+      <p>＝＝＝＝＝＝＝＝＝＝＝</p>
     </div>
     <div class="shindan-area-list">
       <section
