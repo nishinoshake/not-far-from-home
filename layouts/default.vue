@@ -145,7 +145,6 @@ body {
   letter-spacing: 0.1em;
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 700;
-  background: $color-snow;
 }
 
 .container {
