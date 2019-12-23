@@ -1,6 +1,6 @@
 <template>
   <div class="shindan">
-    <h1 class="shindan-title"><span>映画館の近くに住みたい</span></h1>
+    <h1 class="shindan-title">映画館の近くに住みたい</h1>
     <div class="shindan-copy">
       <p>できれば近いだけでなく<br />選択肢がたくさん欲しい</p>
       <p>
@@ -12,7 +12,7 @@
       <p>でもいったいどうすれば</p>
       <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
     </div>
-    <div class="shindan-please">
+    <div class="shindan-please shindan-label">
       <p>＝＝＝＝＝＝＝＝＝＝＝</p>
       <p>都道府県を選んで下さい</p>
       <p>＝＝＝＝＝＝＝＝＝＝＝</p>
@@ -40,6 +40,46 @@
             </nuxt-link>
           </li>
         </ul>
+      </section>
+    </div>
+    <div class="shindan-privacy">
+      <section>
+        <h2 class="shindan-label">＝プライバシポリシー＝</h2>
+        <p>
+          アクセス状況把握のため<br /><a
+            href="https://marketingplatform.google.com/intl/ja/about/analytics/"
+            target="_blank"
+            rel="noopener"
+            >グーグルアナリティクス</a
+          ><br />をサイトに導入してます
+        </p>
+        <p>
+          オプトアウトの手順等は<br /><a
+            href="https://support.google.com/analytics/topic/2919631"
+            target="_blank"
+            rel="noopener"
+            >こちら</a
+          >でご確認ください
+        </p>
+      </section>
+      <section>
+        <h2 class="shindan-label">＝ランキングの仕組み＝</h2>
+        <p>
+          仕組みの詳細については<br />ここでは蛇足になるので<br /><a
+            href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
+            target="_blank"
+            rel="noopener"
+            >別ページ</a
+          >にまとめました
+        </p>
+      </section>
+      <section>
+        <h2 class="shindan-label">＝邦画が好きなかたへ＝</h2>
+        <p>
+          <a href="https://houga.cc" target="_blank" rel="noopener"
+            >→邦画の予告を、朝まで</a
+          >
+        </p>
       </section>
     </div>
   </div>
@@ -70,18 +110,27 @@ export default {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  &-title,
+  &-copy,
+  &-please,
+  &-privacy {
+    @include font-main;
+  }
+  &-label {
+    margin: 0.3em 0;
+    background-color: $color-black;
+    color: $color-white;
+  }
   &-title {
     margin-top: -0.3em;
-    @include font-main;
-  }
-  &-copy,
-  &-please {
-    @include font-main;
   }
   &-please {
-    margin-bottom: 8rem;
-    @include min {
-      margin: 7.5rem 0 8rem;
+    margin-bottom: 10rem;
+  }
+  &-privacy {
+    margin: 10rem 0 -0.1em;
+    a {
+      text-decoration: underline;
     }
   }
   &-area {

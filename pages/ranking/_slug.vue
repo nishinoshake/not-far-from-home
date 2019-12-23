@@ -92,7 +92,10 @@ export default {
 
 <style lang="scss" scoped>
 .ranking {
-  padding: $padding $padding 0;
+  padding: $padding $padding 23rem;
+  @include min {
+    padding: $padding $padding 12rem;
+  }
   &-station {
     padding: 6rem $padding;
     line-height: 1;

@@ -1,23 +1,9 @@
 <template>
-  <footer class="footer" :class="{ 'mod-home': !isIndex }">
-    <transition name="fade">
-      <nav class="footer-nav" v-if="isIndex">
-        <ul class="footer-list">
-          <li class="footer-item">
-            <nuxt-link to="/about/" class="footer-link"
-              >プライバシー仕組み宣伝</nuxt-link
-            >
-          </li>
-        </ul>
-      </nav>
-    </transition>
-
-    <transition name="footer-home">
-      <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
-        別の都道府県も見てみる
-      </button>
-    </transition>
-  </footer>
+  <transition name="footer-home">
+    <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
+      別の都道府県も見てみる
+    </button>
+  </transition>
 </template>
 
 <script>
@@ -44,38 +30,6 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  height: 23rem;
-  position: relative;
-  @include center-flex;
-  @include min {
-    height: 12rem;
-  }
-  &-list {
-    display: flex;
-    justify-content: center;
-  }
-  &-item {
-    position: relative;
-    &:nth-child(n + 2) {
-      position: relative;
-      margin-left: 1.5em;
-      padding-left: 1.5em;
-      &:before {
-        content: '';
-        width: 6px;
-        height: 6px;
-        position: absolute;
-        bottom: calc(50% - 3px);
-        left: -3px;
-        background-color: currentColor;
-        border-radius: 50%;
-      }
-    }
-  }
-  &-link {
-    @include font-l;
-    @include border-bottom;
-  }
   &-home {
     width: 34rem;
     height: 7rem;
