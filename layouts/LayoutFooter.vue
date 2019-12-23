@@ -1,7 +1,7 @@
 <template>
   <transition name="footer-home">
     <button v-if="!isIndex" class="footer-home" @click="handleClickHome">
-      別の都道府県も見てみる
+      都道府県を選ぶ
     </button>
   </transition>
 </template>
@@ -31,12 +31,12 @@ export default {
 <style lang="scss" scoped>
 .footer {
   &-home {
-    width: 34rem;
+    width: 28rem;
     height: 7rem;
     position: fixed;
     z-index: 10;
     bottom: 8rem;
-    left: calc(50% - #{34rem / 2});
+    left: calc(50% - #{28rem / 2});
     border-radius: 999em;
     background-color: $color-white;
     transition: color 0.14s linear, background-color 0.14s linear;

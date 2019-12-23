@@ -12,8 +12,9 @@
       <p>でもいったいどうすれば</p>
       <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
     </div>
-    <div class="shindan-please shindan-label">
+    <div class="shindan-please">
       <p>＝＝＝＝＝＝＝＝＝＝＝</p>
+      <p>引越の候補に考えている</p>
       <p>都道府県を選んで下さい</p>
       <p>＝＝＝＝＝＝＝＝＝＝＝</p>
     </div>
@@ -44,7 +45,19 @@
     </div>
     <div class="shindan-privacy">
       <section>
-        <h2 class="shindan-label">＝プライバシポリシー＝</h2>
+        <h2 class="shindan-label"><span>＝ランキングの仕組み＝</span></h2>
+        <p>
+          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています<br />
+          仕組みの詳細については<br /><a
+            href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
+            target="_blank"
+            rel="noopener"
+            >別ページ</a
+          >にまとめました
+        </p>
+      </section>
+      <section>
+        <h2 class="shindan-label"><span>＝プライバシポリシー＝</span></h2>
         <p>
           アクセス状況把握のため<br /><a
             href="https://marketingplatform.google.com/intl/ja/about/analytics/"
@@ -63,18 +76,7 @@
         </p>
       </section>
       <section>
-        <h2 class="shindan-label">＝ランキングの仕組み＝</h2>
-        <p>
-          仕組みの詳細については<br />ここでは蛇足になるので<br /><a
-            href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
-            target="_blank"
-            rel="noopener"
-            >別ページ</a
-          >にまとめました
-        </p>
-      </section>
-      <section>
-        <h2 class="shindan-label">＝邦画が好きなかたへ＝</h2>
+        <h2 class="shindan-label"><span>＝邦画が好きなかたへ＝</span></h2>
         <p>
           <a href="https://houga.cc" target="_blank" rel="noopener"
             >→邦画の予告を、朝まで</a
@@ -110,6 +112,7 @@ export default {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  padding: 2.6rem 0 5.2rem;
   &-title,
   &-copy,
   &-please,
@@ -117,18 +120,16 @@ export default {
     @include font-main;
   }
   &-label {
-    margin: 0.3em 0;
-    background-color: $color-black;
-    color: $color-white;
-  }
-  &-title {
-    margin-top: -0.3em;
+    margin: 0.7em 0 0.4em;
+    span {
+      background-color: $color-yellow;
+    }
   }
   &-please {
     margin-bottom: 10rem;
   }
   &-privacy {
-    margin: 10rem 0 -0.1em;
+    margin: 12rem 0 0;
     a {
       text-decoration: underline;
     }
