@@ -129,7 +129,7 @@ export default {
     margin-bottom: 10rem;
   }
   &-privacy {
-    margin: 12rem 0 0;
+    margin: 13.5rem 0 0;
     a {
       text-decoration: underline;
     }
