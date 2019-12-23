@@ -108,7 +108,7 @@ export default {
   &-label {
     margin: 0.7em 0 0.4em;
     span {
-      background-color: $color-yellow;
+      background-color: $color-snow;
     }
   }
   &-please {
