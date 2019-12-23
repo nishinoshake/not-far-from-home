@@ -47,13 +47,7 @@
       <section>
         <h2 class="shindan-label"><span>＝ランキングの仕組み＝</span></h2>
         <p>
-          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています<br />
-          仕組みの詳細については<br /><a
-            href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
-            target="_blank"
-            rel="noopener"
-            >別ページ</a
-          >にまとめました
+          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています
         </p>
       </section>
       <section>
@@ -73,14 +67,6 @@
             rel="noopener"
             >こちら</a
           >でご確認ください
-        </p>
-      </section>
-      <section>
-        <h2 class="shindan-label"><span>＝邦画が好きなかたへ＝</span></h2>
-        <p>
-          <a href="https://houga.cc" target="_blank" rel="noopener"
-            >→邦画の予告を、朝まで</a
-          >
         </p>
       </section>
     </div>
