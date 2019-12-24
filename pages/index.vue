@@ -69,6 +69,14 @@
           >でご確認ください
         </p>
       </section>
+      <section>
+        <h2 class="shindan-label">＝邦画が好きなかたへ＝</h2>
+        <p>
+          <a href="https://houga.cc" target="_blank" rel="noopener"
+            >→邦画の予告を、朝まで</a
+          >
+        </p>
+      </section>
     </div>
   </div>
 </template>
@@ -108,7 +116,7 @@ export default {
   &-label {
     margin: 0.7em 0 0.4em;
     span {
-      background-color: $color-snow;
+      background-color: $color-gray;
     }
   }
   &-please {
