@@ -70,7 +70,7 @@
         </p>
       </section>
       <section>
-        <h2 class="shindan-label">＝邦画が好きなかたへ＝</h2>
+        <h2 class="shindan-label"><span>＝邦画が好きなかたへ＝</span></h2>
         <p>
           <a href="https://houga.cc" target="_blank" rel="noopener"
             >→邦画の予告を、朝まで</a
