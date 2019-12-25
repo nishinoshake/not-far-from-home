@@ -12,6 +12,13 @@
       <p>でもいったいどうすれば</p>
       <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
     </div>
+
+    <div class="shindan-description">
+      <p>＝＝＝＝＝＝＝＝＝＝＝</p>
+      <p>映画館へ行きやすい駅の</p>
+      <p>ランキングを表示します</p>
+      <p>＝＝＝＝＝＝＝＝＝＝＝</p>
+    </div>
     <div class="shindan-select">
       <LocationSelector />
       <p class="shindan-select-separator">または</p>
@@ -47,11 +54,12 @@
       <section>
         <h2 class="shindan-label"><span>＝ランキングの仕組み＝</span></h2>
         <p>
-          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています<br>くわしい話は<a
+          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています<br />くわしい話は<a
             href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
             target="_blank"
             rel="noopener"
-          >こちら</a>から
+            >こちら</a
+          >から
         </p>
       </section>
       <section>
@@ -123,6 +131,7 @@ export default {
   padding: 2.6rem 0 5.2rem;
   &-title,
   &-copy,
+  &-description,
   &-select-separator,
   &-select-please,
   &-privacy {
