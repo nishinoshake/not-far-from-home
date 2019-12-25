@@ -1,9 +1,10 @@
 export const DEFAULT_DISTANCE_KM = 2
 
 // メタ
-export const SITE_TITLE = '映画館の近くに住みたいできれば近いだけでなく選択肢がたくさん欲しい一番の理想は渋谷だけど東京に住めるぐらいならそもそも悩んじゃいない今の住まいから離れずに引越が楽で映画館が多いそんな所が知りたいんだでもいったいどうすればいっそ数えてしまおうか全国の駅で映画館の数を'
-export const SITE_DESCRIPTION =
-  '映画館がたくさんある駅、探せます。'
+export const SITE_TITLE =
+  '映画館の近くに住みたいできれば近いだけでなく選択肢がたくさん欲しい一番の理想は渋谷だけど東京に住めるぐらいならそもそも悩んじゃいない今の住まいから離れずに引越が楽で映画館が多いそんな所が知りたいんだでもいったいどうすればいっそ数えてしまおうか全国の駅で映画館の数を'
+export const SITE_TITLE_SHORT = '映画館の近くに住みたい'
+export const SITE_DESCRIPTION = '映画館がたくさんある駅、探せます。'
 
 // メッセージ
 export const CONNECTION_FAIL_MESSSAGE = '通信中にエラーが発生しました'
