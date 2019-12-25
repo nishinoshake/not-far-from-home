@@ -47,7 +47,11 @@
       <section>
         <h2 class="shindan-label"><span>＝ランキングの仕組み＝</span></h2>
         <p>
-          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています
+          各都道府県の駅に対して<br />映画館数と距離をもとに<br />独自のポイントを算出し<br />ランキングにしています<br>くわしい話は<a
+            href="https://qiita.com/nishinoshake/items/64b2eabf6d6ee909b320"
+            target="_blank"
+            rel="noopener"
+          >こちら</a>から
         </p>
       </section>
       <section>
