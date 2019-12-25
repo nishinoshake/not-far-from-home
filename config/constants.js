@@ -7,6 +7,9 @@ export const SITE_DESCRIPTION =
 
 // メッセージ
 export const CONNECTION_FAIL_MESSSAGE = '通信中にエラーが発生しました'
+export const LOCATION_FAIL_MESSSAGE =
+  '位置の取得に失敗しました<br>お手数ですが下の一覧から<br>都道府県を選択して下さい'
+export const LOCATION_SEARCH_MESSSAGE = '・・・探してます・・・'
 
 // 都道府県
 export const PREFECTURE_SLUGS = [

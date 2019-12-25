@@ -1,14 +1,21 @@
 import { normalize } from '@/lib/normalizer'
 import { fetchJson } from '@/lib/utils'
-import { DEFAULT_DISTANCE_KM } from '@/config/constants'
+import {
+  DEFAULT_DISTANCE_KM,
+  LOCATION_FAIL_MESSSAGE,
+  LOCATION_SEARCH_MESSSAGE
+} from '@/config/constants'
 
 export const state = () => ({
   selectedDistance: DEFAULT_DISTANCE_KM,
   selectedPrefectureId: null,
   isReady: false,
+  isError: false,
+  isModalOpen: false,
   hasHistory: false,
   rankings: {},
   prefectures: [],
+  modalMessage: '',
   entities: {
     cinemas: {},
     prefectures: {},
@@ -52,6 +59,20 @@ export const actions = {
     const lines = await fetchJson(`line`)
 
     commit('recieveLines', { lines })
+  },
+  showSearching({ commit }) {
+    commit('setModalMessage', { message: LOCATION_SEARCH_MESSSAGE })
+    commit('openModal')
+  },
+  showLocationError({ commit }) {
+    commit('setModalMessage', { message: LOCATION_FAIL_MESSSAGE })
+    commit('setIsError')
+    commit('openModal')
+  },
+  clearModal({ commit }) {
+    commit('clearModalMessage')
+    commit('clearIsError')
+    commit('closeModal')
   }
 }
 
@@ -83,8 +104,26 @@ export const mutations = {
   setIsReady(state) {
     state.isReady = true
   },
+  setIsError(state) {
+    state.isError = true
+  },
+  clearIsError(state) {
+    state.isError = false
+  },
   setHasHistory(state) {
     state.hasHistory = true
+  },
+  openModal(state) {
+    state.isModalOpen = true
+  },
+  closeModal(state) {
+    state.isModalOpen = false
+  },
+  setModalMessage(state, { message }) {
+    state.modalMessage = message
+  },
+  clearModalMessage(state) {
+    state.modalMessage = ''
   }
 }
 

@@ -60,9 +60,9 @@ export default {
       transition: 1ms;
     }
     &-enter {
-      transform: translateY(100%) translateY(14rem);
+      transform: translateY(100%) translateY(8rem);
       @include min {
-        transform: translateY(100%) translateY(9rem);
+        transform: translateY(100%) translateY(3rem);
       }
     }
   }

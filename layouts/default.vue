@@ -23,17 +23,19 @@
         />
       </svg>
     </div>
+    <ModalMessage />
   </div>
 </template>
 
 <script>
 import LayoutFooter from './LayoutFooter'
+import ModalMessage from '@/components/ModalMessage'
 
 const MIN_WAIT_MS = 800
 const MAX_WAIT_MS = 5000
 
 export default {
-  components: { LayoutFooter },
+  components: { LayoutFooter, ModalMessage },
   data() {
     return {
       isLoaded: false

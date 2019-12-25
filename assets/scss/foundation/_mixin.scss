@@ -66,9 +66,12 @@
   font-family: 'Lato', sans-serif;
 }
 @mixin font-main {
-  font-size: 3.7rem;
+  @include font-enorme;
   line-height: 1.6;
   white-space: nowrap;
+}
+@mixin font-enorme {
+  font-size: 3.7rem;
 }
 @mixin font-grande {
   font-size: 3rem;

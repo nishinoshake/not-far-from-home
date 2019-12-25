@@ -12,12 +12,12 @@
       <p>でもいったいどうすれば</p>
       <p>いっそ数えてしまおうか<br />全国の駅で映画館の数を</p>
     </div>
-    <div class="shindan-please">
-      <p>＝＝＝＝＝＝＝＝＝＝＝</p>
-      <p>引越の候補に考えている</p>
-      <p>都道府県を選んで下さい</p>
-      <p>＝＝＝＝＝＝＝＝＝＝＝</p>
+    <div class="shindan-select">
+      <LocationSelector />
+      <p class="shindan-select-separator">または</p>
+      <p class="shindan-select-please">↓都道府県を選択する↓</p>
     </div>
+
     <div class="shindan-area-list">
       <section
         class="shindan-area-item"
@@ -51,7 +51,7 @@
         </p>
       </section>
       <section>
-        <h2 class="shindan-label"><span>＝プライバシポリシー＝</span></h2>
+        <h2 class="shindan-label"><span>＝アクセス解析の使用＝</span></h2>
         <p>
           アクセス状況把握のため<br /><a
             href="https://marketingplatform.google.com/intl/ja/about/analytics/"
@@ -70,6 +70,12 @@
         </p>
       </section>
       <section>
+        <h2 class="shindan-label"><span>＝位置情報の取り扱い＝</span></h2>
+        <p>
+          現在地から探した場合も<br />位置は保存してないので<br />安心して使ってください
+        </p>
+      </section>
+      <section>
         <h2 class="shindan-label"><span>＝邦画が好きなかたへ＝</span></h2>
         <p>
           <a href="https://houga.cc" target="_blank" rel="noopener"
@@ -84,10 +90,14 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex'
 import { buildMeta } from '@/lib/meta'
+import LocationSelector from '@/components/LocationSelector'
 
 export default {
   head() {
     return buildMeta()
+  },
+  components: {
+    LocationSelector
   },
   computed: {
     ...mapGetters(['prefectureAreas'])
@@ -109,7 +119,8 @@ export default {
   padding: 2.6rem 0 5.2rem;
   &-title,
   &-copy,
-  &-please,
+  &-select-separator,
+  &-select-please,
   &-privacy {
     @include font-main;
   }
@@ -119,8 +130,14 @@ export default {
       background-color: $color-gray;
     }
   }
-  &-please {
-    margin-bottom: 10rem;
+  &-select {
+    margin: 10rem 0;
+    padding: 0 $padding;
+    &-separator {
+      margin: 4rem 0;
+    }
+    &-please {
+    }
   }
   &-privacy {
     margin: 13.5rem 0 0;

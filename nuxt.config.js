@@ -79,9 +79,10 @@ export default {
     routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`)
   },
   env: {
-    BASE_URL:
-      process.env.BASE_URL ||
-      'https://s3-ap-northeast-1.amazonaws.com/storage.not-far-from-home.cc/api'
+    STORAGE_URL:
+      process.env.STORAGE_URL ||
+      'https://s3-ap-northeast-1.amazonaws.com/storage.not-far-from-home.cc/api',
+    API_URL: process.env.API_URL || 'https://api.not-far-from-home.cc'
   },
   plugins: [{ src: '@/plugins/inject-webfont-loader.js', mode: 'client' }],
   modules: [
