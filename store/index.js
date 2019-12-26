@@ -46,17 +46,17 @@ export const actions = {
     commit('recieveRanking', { distance, ranking })
   },
   async fetchCinemas({ commit }) {
-    const cinemas = await fetchJson(`cinema`)
+    const cinemas = await fetchJson('slim/cinema')
 
     commit('recieveCinemas', { cinemas })
   },
   async fetchPrefectures({ commit }) {
-    const prefectures = await fetchJson(`pref`)
+    const prefectures = await fetchJson('pref')
 
     commit('recievePrefectures', { prefectures })
   },
   async fetchLines({ commit }) {
-    const lines = await fetchJson(`line`)
+    const lines = await fetchJson('slim/line')
 
     commit('recieveLines', { lines })
   },
@@ -141,10 +141,11 @@ export const getters = {
         stations: item.stations.map(station => ({
           id: station.id,
           name: station.name,
-          roman: station.roman,
-          point: station.point,
+          roman: station.roman || '',
           isDuplicated: stationNames.filter(n => n === station.name).length > 1,
-          lines: station.lineIds.map(lineId => state.entities.lines[lineId]),
+          lines: station.lineIds
+            ? station.lineIds.map(lineId => state.entities.lines[lineId])
+            : [],
           cinemas: station.cinemas.map(cinema => ({
             distance: cinema.distance,
             ...state.entities.cinemas[cinema.id]

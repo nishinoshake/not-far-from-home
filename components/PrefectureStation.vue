@@ -9,7 +9,7 @@
       >
         <span class="prefecture-station-text">
           {{ station.name }}駅<span v-if="station.isDuplicated"
-            >（{{ station.lines[0].name }}</span
+            >({{ station.lines[0].name }})</span
           >
         </span>
       </a>
