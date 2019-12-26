@@ -76,7 +76,8 @@ export default {
     }
   },
   generate: {
-    routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`)
+    routes: PREFECTURE_SLUGS.map(slug => `/ranking/${slug}/`),
+    interval: 500
   },
   env: {
     STORAGE_URL:
