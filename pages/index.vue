@@ -88,7 +88,12 @@
         </p>
       </section>
       <section>
-        <h2 class="shindan-label"><span>＝邦画が好きなかたへ＝</span></h2>
+        <h2 class="shindan-label"><span>＝関連リンクみたいな＝</span></h2>
+        <p>
+          <a href="https://yokoku.cc" target="_blank" rel="noopener"
+            >→予告の時間🍿🍿🍿🍿🍿</a
+          >
+        </p>
         <p>
           <a href="https://houga.cc" target="_blank" rel="noopener"
             >→邦画の予告を、朝まで</a
