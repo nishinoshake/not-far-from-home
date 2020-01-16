@@ -91,7 +91,7 @@
         <h2 class="shindan-label"><span>＝関連リンクみたいな＝</span></h2>
         <p>
           <a href="https://yokoku.cc" target="_blank" rel="noopener"
-            >→予告の時間🍿🍿🍿🍿🍿</a
+            >→電影予告集会🍿🍿🍿🍿</a
           >
         </p>
         <p>
