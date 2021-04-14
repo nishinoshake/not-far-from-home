@@ -90,11 +90,6 @@
       <section>
         <h2 class="shindan-label"><span>＝関連リンクみたいな＝</span></h2>
         <p>
-          <a href="https://yokoku.cc" target="_blank" rel="noopener"
-            >→電影予告集会🍿🍿🍿🍿</a
-          >
-        </p>
-        <p>
           <a href="https://houga.cc" target="_blank" rel="noopener"
             >→邦画の予告を、朝まで</a
           >
