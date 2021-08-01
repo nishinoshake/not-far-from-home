@@ -87,14 +87,6 @@
           現在地から探した場合も<br />位置は保存してないので<br />安心して使ってください
         </p>
       </section>
-      <section>
-        <h2 class="shindan-label"><span>＝関連リンクみたいな＝</span></h2>
-        <p>
-          <a href="https://houga.cc" target="_blank" rel="noopener"
-            >→邦画の予告を、朝まで</a
-          >
-        </p>
-      </section>
     </div>
   </div>
 </template>
